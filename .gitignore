@@ -8,3 +8,8 @@ printer-[0-9]*_[0-9]*.cfg
 *.csv
 *.zip
 ShakeTune_results
+*.gz
+klippy.log
+moonraker.log
+crowsnest.log
+webcamd.log
