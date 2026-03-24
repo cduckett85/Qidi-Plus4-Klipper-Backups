@@ -171,3 +171,9 @@ Printer is halted
 2026-03-24 17:55:07 - WebSocket connection lost, restarting... - WARNING
 2026-03-24 20:20:50 - WebSocket connection lost, restarting... - WARNING
 2026-03-24 20:20:52 - WebSocket connection error: [Errno 111] Connection refused - ERROR
+2026-03-24 20:20:56 - Klipper state: error, Error message: Option 'is_non_critical' is not valid in section 'beacon'
+
+Once the underlying issue is corrected, use the "RESTART"
+command to reload the config and restart the host software.
+Printer is halted
+ - ERROR
