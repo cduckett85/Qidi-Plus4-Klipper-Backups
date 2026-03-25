@@ -3207,3 +3207,4 @@ ConnectionRefusedError: [Errno 111] Connect call failed ('127.0.0.1', 7125)
 2026-03-25 05:15:55,888 mobileraker.QidiPlus4 INFO - ---- Completed Evaluations Task! ----
 2026-03-25 05:20:57,732 mobileraker.QidiPlus4.sync INFO - Moonraker's connection to Klippy has terminated/disconnected
 2026-03-25 05:22:19,610 mobileraker.QidiPlus4.sync INFO - Moonraker's connection to Klippy has terminated/disconnected
+2026-03-25 05:24:13,113 mobileraker.QidiPlus4.sync INFO - Moonraker's connection to Klippy has terminated/disconnected
