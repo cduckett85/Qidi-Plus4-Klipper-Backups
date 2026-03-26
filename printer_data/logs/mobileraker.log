@@ -5056,3 +5056,120 @@ ConnectionRefusedError: [Errno 111] Connect call failed ('127.0.0.1', 7125)
 2026-03-26 15:40:39,342 mobileraker.QidiPlus4 INFO - 0 notifications generated for machineID: 92e07d36-b96a-4b49-9fcd-43757e7c8599
 2026-03-26 15:40:39,343 mobileraker.QidiPlus4 INFO - No snap update necessary for 92e07d36-b96a-4b49-9fcd-43757e7c8599
 2026-03-26 15:40:39,344 mobileraker.QidiPlus4 INFO - ---- Completed Evaluations Task! ----
+2026-03-26 15:50:22,406 mobileraker.QidiPlus4.jrpc INFO - websocket closed ?????...
+2026-03-26 15:50:22,407 mobileraker.QidiPlus4.jrpc INFO - Notifying listeners about connection state False
+2026-03-26 15:50:22,409 mobileraker.QidiPlus4.sync INFO - Connection state changed to <is_connected: False>
+2026-03-26 15:50:22,416 websockets.client INFO - ! connect failed; reconnecting in 0.1 seconds
+Traceback (most recent call last):
+  File "/home/mks/mobileraker-env/lib/python3.11/site-packages/websockets/legacy/client.py", line 598, in __aiter__
+    async with self as protocol:
+  File "/home/mks/mobileraker-env/lib/python3.11/site-packages/websockets/legacy/client.py", line 633, in __aenter__
+    return await self
+           ^^^^^^^^^^
+  File "/home/mks/mobileraker-env/lib/python3.11/site-packages/websockets/legacy/client.py", line 650, in __await_impl_timeout__
+    return await asyncio.wait_for(self.__await_impl__(), self.open_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/asyncio/tasks.py", line 479, in wait_for
+    return fut.result()
+           ^^^^^^^^^^^^
+  File "/home/mks/mobileraker-env/lib/python3.11/site-packages/websockets/legacy/client.py", line 654, in __await_impl__
+    transport, protocol = await self._create_connection()
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 1085, in create_connection
+    raise exceptions[0]
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 1069, in create_connection
+    sock = await self._connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 973, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "/usr/lib/python3.11/asyncio/selector_events.py", line 634, in sock_connect
+    return await fut
+           ^^^^^^^^^
+  File "/usr/lib/python3.11/asyncio/selector_events.py", line 674, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 111] Connect call failed ('127.0.0.1', 7125)
+2026-03-26 15:50:22,536 websockets.client INFO - ! connect failed again; retrying in 3 seconds
+Traceback (most recent call last):
+  File "/home/mks/mobileraker-env/lib/python3.11/site-packages/websockets/legacy/client.py", line 598, in __aiter__
+    async with self as protocol:
+  File "/home/mks/mobileraker-env/lib/python3.11/site-packages/websockets/legacy/client.py", line 633, in __aenter__
+    return await self
+           ^^^^^^^^^^
+  File "/home/mks/mobileraker-env/lib/python3.11/site-packages/websockets/legacy/client.py", line 650, in __await_impl_timeout__
+    return await asyncio.wait_for(self.__await_impl__(), self.open_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/asyncio/tasks.py", line 479, in wait_for
+    return fut.result()
+           ^^^^^^^^^^^^
+  File "/home/mks/mobileraker-env/lib/python3.11/site-packages/websockets/legacy/client.py", line 654, in __await_impl__
+    transport, protocol = await self._create_connection()
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 1085, in create_connection
+    raise exceptions[0]
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 1069, in create_connection
+    sock = await self._connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 973, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "/usr/lib/python3.11/asyncio/selector_events.py", line 634, in sock_connect
+    return await fut
+           ^^^^^^^^^
+  File "/usr/lib/python3.11/asyncio/selector_events.py", line 674, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 111] Connect call failed ('127.0.0.1', 7125)
+2026-03-26 15:50:25,544 websockets.client INFO - ! connect failed again; retrying in 5 seconds
+Traceback (most recent call last):
+  File "/home/mks/mobileraker-env/lib/python3.11/site-packages/websockets/legacy/client.py", line 598, in __aiter__
+    async with self as protocol:
+  File "/home/mks/mobileraker-env/lib/python3.11/site-packages/websockets/legacy/client.py", line 633, in __aenter__
+    return await self
+           ^^^^^^^^^^
+  File "/home/mks/mobileraker-env/lib/python3.11/site-packages/websockets/legacy/client.py", line 650, in __await_impl_timeout__
+    return await asyncio.wait_for(self.__await_impl__(), self.open_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/asyncio/tasks.py", line 479, in wait_for
+    return fut.result()
+           ^^^^^^^^^^^^
+  File "/home/mks/mobileraker-env/lib/python3.11/site-packages/websockets/legacy/client.py", line 654, in __await_impl__
+    transport, protocol = await self._create_connection()
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 1085, in create_connection
+    raise exceptions[0]
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 1069, in create_connection
+    sock = await self._connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 973, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "/usr/lib/python3.11/asyncio/selector_events.py", line 634, in sock_connect
+    return await fut
+           ^^^^^^^^^
+  File "/usr/lib/python3.11/asyncio/selector_events.py", line 674, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 111] Connect call failed ('127.0.0.1', 7125)
+2026-03-26 15:50:30,577 mobileraker.QidiPlus4.jrpc INFO - WebSocket connected
+2026-03-26 15:50:30,579 mobileraker.QidiPlus4.jrpc INFO - Notifying listeners about connection state True
+2026-03-26 15:50:30,580 mobileraker.QidiPlus4.sync INFO - Connection state changed to <is_connected: True>
+2026-03-26 15:50:30,583 mobileraker.QidiPlus4.sync INFO - Doing a (Re)Sync with moonraker
+2026-03-26 15:50:30,584 mobileraker.QidiPlus4.sync INFO - Syncing klippy Objects
+2026-03-26 15:50:30,625 mobileraker.QidiPlus4.sync INFO - Received server info: {'jsonrpc': '2.0', 'result': {'klippy_connected': True, 'klippy_state': 'ready', 'components': ['secrets', 'template', 'klippy_connection', 'jsonrpc', 'internal_transport', 'application', 'websockets', 'database', 'dbus_manager', 'file_manager', 'authorization', 'klippy_apis', 'shell_command', 'machine', 'data_store', 'proc_stats', 'job_state', 'job_queue', 'history', 'http_client', 'announcements', 'webcam', 'extensions', 'octoprint_compat', 'update_manager', 'spoolman'], 'failed_components': [], 'registered_directories': ['config', 'logs', 'gcodes', 'config_examples', 'docs'], 'warnings': [], 'websocket_count': 1, 'moonraker_version': 'v0.10.0-0-g16e530e', 'missing_klippy_requirements': [], 'api_version': [1, 5, 0], 'api_version_string': '1.5.0'}, 'id': 8819}
+2026-03-26 15:50:30,628 mobileraker.QidiPlus4.sync INFO - Syncing printer Objects
+2026-03-26 15:50:30,634 mobileraker.QidiPlus4 INFO - Updated companion meta data in moonraker database
+2026-03-26 15:50:30,639 mobileraker.QidiPlus4.sync INFO - Subscribing to printer Objects: dict_keys(['gcode_move', 'print_stats', 'virtual_sdcard', 'display_status', 'filament_switch_sensor filament_tangle_sensor', 'toolhead'])
+2026-03-26 15:50:30,853 mobileraker.QidiPlus4.sync INFO - Subscribing to printer Objects
+2026-03-26 15:50:30,855 mobileraker.QidiPlus4.sync INFO - Subscribed to printer Objects
+2026-03-26 15:50:30,856 mobileraker.QidiPlus4.sync INFO - (Re)Sync completed
+2026-03-26 15:50:44,385 mobileraker.QidiPlus4 INFO - Time-Interval reached. Evaluating!
+2026-03-26 15:50:44,386 mobileraker.QidiPlus4 INFO - Snapshot passed threshold. LastSnap: PrinterSnapshot(timestamp=2026-03-26T15:40:39.330589,klippy_ready=True, print_state=standby, m117=None, m117_hash=, virtual_sdcard=VirtualSDCard (progress: 0.000000, file_position: 0), print_stats=PrintStats (filename: , total_duration: 0.0, print_duration: 0.0, state: standby, message: ), current_file=None, toolhead=<mobileraker.data.dtos.moonraker.printer_objects.Toolhead object at 0xffffaf83c790>, gcode_move=<mobileraker.data.dtos.moonraker.printer_objects.GCodeMove object at 0xffffaf744f90>, gcode_response=Run Current: 1.07A Hold Current: 1.07A, gcode_response_hash=702cc063ba7d39938ec4378d3e0f42208a8ad2b3d3e45f5ba60beef4dda1fe41, timelapse_pause=None, filament_sensors=FilamentSensor(name=filament_tangle_sensor, kind=filament_switch_sensor, enabled=True, filament_detected=True)), NewSnap: PrinterSnapshot(timestamp=2026-03-26T15:50:44.384611,klippy_ready=True, print_state=standby, m117=None, m117_hash=, virtual_sdcard=VirtualSDCard (progress: 0.000000, file_position: 0), print_stats=PrintStats (filename: , total_duration: 0.0, print_duration: 0.0, state: standby, message: ), current_file=None, toolhead=<mobileraker.data.dtos.moonraker.printer_objects.Toolhead object at 0xffffaf8c3250>, gcode_move=<mobileraker.data.dtos.moonraker.printer_objects.GCodeMove object at 0xffffaf7438d0>, gcode_response=None, gcode_response_hash=, timelapse_pause=None, filament_sensors=FilamentSensor(name=filament_tangle_sensor, kind=filament_switch_sensor, enabled=True, filament_detected=True))
+2026-03-26 15:50:44,393 mobileraker.QidiPlus4 INFO - Fetched 1 app Cfgs!
+2026-03-26 15:50:44,394 mobileraker.QidiPlus4 INFO - Evaluate for machineID 92e07d36-b96a-4b49-9fcd-43757e7c8599, cfg.version: 2.9.7-ios , cfg.snap: NotificationSnap(progress=0, progress_live_activity=0, progress_progressbar=0, last_progress=1970-01-01 00:00:00, last_progress_live_activity=1970-01-01 00:00:00, last_progress_progressbar=1970-01-01 00:00:00, state=standby, m117=, gcode_response=702cc063ba7d39938ec4378d3e0f42208a8ad2b3d3e45f5ba60beef4dda1fe41, filament_sensors=[]), cfg.settings: NotificationSettings(progress_config=25, state_config=['standby', 'printing', 'paused', 'complete', 'error'], android_progressbar=False, eta_sources=['slicer', 'filament'], snapshot_webcam=None, exclude_filament_sensors=[], inherit_global_settings=True, created=2026-03-23T00:58:06.777211, last_modified=2026-03-23T00:58:06.777211)
+2026-03-26 15:50:44,395 mobileraker.QidiPlus4 INFO - 0 notifications generated for machineID: 92e07d36-b96a-4b49-9fcd-43757e7c8599
+2026-03-26 15:50:44,396 mobileraker.QidiPlus4 INFO - Updating snap in FCM Cfg for 92e07d36-b96a-4b49-9fcd-43757e7c8599: NotificationSnap(progress=0, progress_live_activity=0, progress_progressbar=0, last_progress=1970-01-01 00:00:00, last_progress_live_activity=1970-01-01 00:00:00, last_progress_progressbar=1970-01-01 00:00:00, state=standby, m117=, gcode_response=, filament_sensors=[])
+2026-03-26 15:50:44,409 mobileraker.QidiPlus4 INFO - Updated snap in FCM Cfg for 92e07d36-b96a-4b49-9fcd-43757e7c8599: {'jsonrpc': '2.0', 'result': {'namespace': 'mobileraker', 'key': 'fcm.92e07d36-b96a-4b49-9fcd-43757e7c8599.snap', 'value': {'progress': 0.0, 'progress_live_activity': 0.0, 'progress_progressbar': 0.0, 'state': 'standby', 'm117': '', 'filament_sensors': [], 'gcode_response': '', 'last_progress': '1970-01-01T00:00:00', 'last_progress_live_activity': '1970-01-01T00:00:00', 'last_progress_progressbar': '1970-01-01T00:00:00'}}, 'id': 7650}
+2026-03-26 15:50:44,410 mobileraker.QidiPlus4 INFO - ---- Completed Evaluations Task! ----
+2026-03-26 16:00:49,496 mobileraker.QidiPlus4 INFO - Time-Interval reached. Evaluating!
+2026-03-26 16:00:49,496 mobileraker.QidiPlus4 INFO - Snapshot passed threshold. LastSnap: PrinterSnapshot(timestamp=2026-03-26T15:50:44.384611,klippy_ready=True, print_state=standby, m117=None, m117_hash=, virtual_sdcard=VirtualSDCard (progress: 0.000000, file_position: 0), print_stats=PrintStats (filename: , total_duration: 0.0, print_duration: 0.0, state: standby, message: ), current_file=None, toolhead=<mobileraker.data.dtos.moonraker.printer_objects.Toolhead object at 0xffffaf8c3250>, gcode_move=<mobileraker.data.dtos.moonraker.printer_objects.GCodeMove object at 0xffffaf7438d0>, gcode_response=None, gcode_response_hash=, timelapse_pause=None, filament_sensors=FilamentSensor(name=filament_tangle_sensor, kind=filament_switch_sensor, enabled=True, filament_detected=True)), NewSnap: PrinterSnapshot(timestamp=2026-03-26T16:00:49.495051,klippy_ready=True, print_state=standby, m117=None, m117_hash=, virtual_sdcard=VirtualSDCard (progress: 0.000000, file_position: 0), print_stats=PrintStats (filename: , total_duration: 0.0, print_duration: 0.0, state: standby, message: ), current_file=None, toolhead=<mobileraker.data.dtos.moonraker.printer_objects.Toolhead object at 0xffffaf8c3350>, gcode_move=<mobileraker.data.dtos.moonraker.printer_objects.GCodeMove object at 0xffffaf7438d0>, gcode_response=None, gcode_response_hash=, timelapse_pause=None, filament_sensors=FilamentSensor(name=filament_tangle_sensor, kind=filament_switch_sensor, enabled=True, filament_detected=True))
+2026-03-26 16:00:49,503 mobileraker.QidiPlus4 INFO - Fetched 1 app Cfgs!
+2026-03-26 16:00:49,504 mobileraker.QidiPlus4 INFO - Evaluate for machineID 92e07d36-b96a-4b49-9fcd-43757e7c8599, cfg.version: 2.9.7-ios , cfg.snap: NotificationSnap(progress=0, progress_live_activity=0, progress_progressbar=0, last_progress=1970-01-01 00:00:00, last_progress_live_activity=1970-01-01 00:00:00, last_progress_progressbar=1970-01-01 00:00:00, state=standby, m117=, gcode_response=, filament_sensors=[]), cfg.settings: NotificationSettings(progress_config=25, state_config=['standby', 'printing', 'paused', 'complete', 'error'], android_progressbar=False, eta_sources=['slicer', 'filament'], snapshot_webcam=None, exclude_filament_sensors=[], inherit_global_settings=True, created=2026-03-23T00:58:06.777211, last_modified=2026-03-23T00:58:06.777211)
+2026-03-26 16:00:49,506 mobileraker.QidiPlus4 INFO - 0 notifications generated for machineID: 92e07d36-b96a-4b49-9fcd-43757e7c8599
+2026-03-26 16:00:49,507 mobileraker.QidiPlus4 INFO - No snap update necessary for 92e07d36-b96a-4b49-9fcd-43757e7c8599
+2026-03-26 16:00:49,508 mobileraker.QidiPlus4 INFO - ---- Completed Evaluations Task! ----
