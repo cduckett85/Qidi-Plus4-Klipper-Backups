@@ -200,3 +200,4 @@ Printer is halted
 2026-03-26 16:10:00 - WebSocket connection lost, restarting... - WARNING
 2026-03-26 16:10:02 - WebSocket connection error: [Errno 111] Connection refused - ERROR
 2026-03-26 16:10:04 - WebSocket connection lost, restarting... - WARNING
+2026-03-28 04:09:19 - WebSocket connection lost, restarting... - WARNING
