@@ -214,3 +214,4 @@ Printer is halted
 2026-03-28 05:46:36 - New Printjob! Generating thumbnail for 'FirstLayerCalibration-FirstLayer_ASA_2m22s.gcode' - ERROR
 2026-03-28 05:46:36 - thumbnail transmission. stopping other serial transmissions temporarily - WARNING
 2026-03-28 05:58:49 - WebSocket connection lost, restarting... - WARNING
+2026-03-28 06:31:01 - WebSocket connection lost, restarting... - WARNING
