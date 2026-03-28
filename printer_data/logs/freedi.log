@@ -211,3 +211,6 @@ Printer is halted
 2026-03-28 05:12:47 - Error at POST-Request: 400 Client Error: Must home X and Y axes before homing Z for url: http://127.0.0.1:7125/printer/gcode/script - ERROR
 2026-03-28 05:28:55 - WebSocket connection lost, restarting... - WARNING
 2026-03-28 05:34:13 - WebSocket connection lost, restarting... - WARNING
+2026-03-28 05:46:36 - New Printjob! Generating thumbnail for 'FirstLayerCalibration-FirstLayer_ASA_2m22s.gcode' - ERROR
+2026-03-28 05:46:36 - thumbnail transmission. stopping other serial transmissions temporarily - WARNING
+2026-03-28 05:58:49 - WebSocket connection lost, restarting... - WARNING
