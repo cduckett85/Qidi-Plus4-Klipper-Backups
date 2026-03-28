@@ -1,0 +1,314 @@
+-------------------- Log Start | Fri Mar 27 00:14:13 2026 --------------------
+platform: Linux-6.6.62-current-rockchip64-aarch64-with-glibc2.36
+data_path: /home/mks/printer_data
+is_default_data_path: False
+config_file: /home/mks/printer_data/config/moonraker.conf
+backup_config: /home/mks/printer_data/config/.moonraker.conf.bkp
+startup_warnings: []
+verbose: False
+debug: False
+asyncio_debug: False
+is_backup_config: False
+is_python_package: False
+instance_uuid: ffe2e77b8e654b2ebb55adc41a3b0179
+unix_socket_path: /home/mks/printer_data/comms/moonraker.sock
+structured_logging: False
+software_version: v0.10.0-0-g16e530e
+git_branch: master
+git_remote: origin
+git_repo_url: https://github.com/Arksine/moonraker
+modified_files: []
+unofficial_components: []
+log_file: /home/mks/printer_data/logs/moonraker.log
+python_version: 3.11.2 (main, Apr 28 2025, 14:11:48) [GCC 12.2.0]
+launch_args: /home/mks/moonraker-env/bin/python /home/mks/moonraker/moonraker/moonraker.py -d /home/mks/printer_data
+msgspec_enabled: True
+uvloop_enabled: True
+
+#################### Moonraker Configuration ####################
+
+[server]
+host = 0.0.0.0
+port = 7125
+klippy_uds_address = /home/mks/printer_data/comms/klippy.sock
+
+[authorization]
+trusted_clients = 
+	10.0.0.0/8
+	127.0.0.0/8
+	169.254.0.0/16
+	172.16.0.0/12
+	192.168.0.0/16
+	FE80::/10
+	::1/128
+	172.71.0.0/16
+	170.85.0.0/16
+cors_domains = 
+	*.lan
+	*.local
+	*://localhost
+	*://localhost:*
+	*://my.mainsail.xyz
+	*://app.fluidd.xyz
+	*://ad5m.cduckett.net
+	*://qdp4.cduckett.net
+
+[octoprint_compat]
+
+[history]
+
+[file_manager]
+enable_object_processing = True
+
+[announcements]
+subscriptions = 
+	FreeDi
+
+[spoolman]
+server = http://192.168.1.10:7912
+
+[update_manager]
+channel = stable
+refresh_interval = 168
+
+[update_manager mainsail]
+type = web
+channel = stable
+repo = mainsail-crew/mainsail
+path = ~/mainsail
+
+[update_manager fluidd]
+type = web
+channel = stable
+repo = fluidd-core/fluidd
+path = /home/mks/fluidd
+persistent_files = 
+	config.json
+
+[update_manager fluidd-config]
+type = git_repo
+origin = https://github.com/fluidd-core/fluidd-config.git
+path = /home/mks/fluidd-config
+primary_branch = master
+managed_services = klipper
+
+[update_manager crowsnest]
+type = git_repo
+origin = https://github.com/mainsail-crew/crowsnest.git
+path = ~/crowsnest
+install_script = tools/pkglist.sh
+
+[update_manager FreeDi]
+type = git_repo
+channel = stable
+origin = https://github.com/Phil1988/FreeDi
+path = ~/FreeDi
+virtualenv = ~/klippy-env
+requirements = requirements.txt
+managed_services = FreeDi
+info_tags = 
+	desc=FreeDi
+
+[update_manager mobileraker]
+type = git_repo
+origin = https://github.com/Clon1998/mobileraker_companion.git
+path = /home/mks/mobileraker_companion
+primary_branch = main
+env = /home/mks/mobileraker-env/bin/python
+requirements = /home/mks/mobileraker_companion/scripts/mobileraker-requirements.txt
+install_script = /home/mks/mobileraker_companion/scripts/install.sh
+managed_services = mobileraker
+
+[update_manager klipper-backup]
+type = git_repo
+origin = https://github.com/Staubgeborener/klipper-backup.git
+path = ~/klipper-backup
+primary_branch = main
+managed_services = moonraker
+
+[update_manager beacon]
+type = git_repo
+channel = dev
+origin = https://github.com/beacon3d/beacon_klipper.git
+path = ~/beacon_klipper
+env = ~/klippy-env/bin/python
+requirements = requirements.txt
+install_script = install.sh
+is_system_service = False
+managed_services = klipper
+info_tags = 
+	desc=Beacon Surface Scanner
+
+[update_manager klipper_tmc_autotune]
+type = git_repo
+channel = dev
+origin = https://github.com/andrewmcgr/klipper_tmc_autotune
+path = /home/mks/klipper_tmc_autotune
+primary_branch = main
+managed_services = klipper
+
+[update_manager Klippain-ShakeTune]
+type = git_repo
+origin = https://github.com/Frix-x/klippain-shaketune.git
+path = ~/klippain_shaketune
+virtualenv = /home/mks/klippy-env
+requirements = requirements.txt
+system_dependencies = system-dependencies.json
+primary_branch = main
+managed_services = klipper
+
+[update_manager KAMP]
+type = git_repo
+origin = https://github.com/kyleisah/Klipper-Adaptive-Meshing-Purging.git
+path = ~/Klipper-Adaptive-Meshing-Purging
+primary_branch = main
+managed_services = klipper
+
+#################################################################
+All Configuration Files:
+/home/mks/printer_data/config/moonraker.conf
+#################################################################
+Loading Sqlite database provider. Sqlite Version: 3.40.1
+Unsafe Shutdown Count: 4
+
+System Info:
+
+***python***
+  version: (3, 11, 2, 'final', 0)
+  version_string: 3.11.2 (main, Apr 28 2025, 14:11:48) [GCC 12.2.0]
+
+***cpu_info***
+  cpu_count: 4
+  bits: 64bit
+  processor: aarch64
+  cpu_desc: 
+  serial_number: 
+  hardware_desc: 
+  model: 
+  total_memory: 999276
+  memory_units: kB
+
+***sd_info***
+
+***distribution***
+  name: Armbian-unofficial 24.11.1 bookworm
+  id: debian
+  version: 12
+  version_parts: {'major': '12', 'minor': '', 'build_number': ''}
+  like: 
+  codename: bookworm
+  release_info: {'name': '# PLEASE DO NOT EDIT THIS FILE', 'id': 'armbian'}
+  kernel_version: 6.6.62-current-rockchip64
+
+***virtualization***
+  virt_type: none
+  virt_identifier: none
+
+***network***
+
+***canbus***
+
+***Allowed Services***
+  klipper_mcu
+  webcamd
+  MoonCord
+  KlipperScreen
+  moonraker-telegram-bot
+  moonraker-obico
+  sonar
+  crowsnest
+  octoeverywhere
+  ratos-configurator
+  FreeDi
+  mobileraker
+Module libcamera unavailable, import failed
+
+Systemd unit moonraker.service:
+unit_name: moonraker.service
+is_default: True
+manager: systemd
+Properties:
+**Requires=['network-online.target', '-.mount', 'sysinit.target', 'system.slice']
+**After=['system.slice', 'basic.target', '-.mount', 'systemd-journald.socket', 'network-online.target', 'sysinit.target']
+**SupplementaryGroups=['moonraker-admin']
+**EnvironmentFiles=/home/mks/printer_data/systemd/moonraker.env
+**ExecStart=/home/mks/moonraker-env/bin/python $MOONRAKER_ARGS
+**WorkingDirectory=/home/mks/moonraker
+**FragmentPath=/etc/systemd/system/moonraker.service
+**Description=API Server for Klipper SV1
+**User=mks
+
+Systemd unit klipper.service:
+unit_name: klipper.service
+is_default: True
+manager: systemd
+Properties:
+**Requires=['sysinit.target', 'system.slice', '-.mount']
+**After=['basic.target', 'sysinit.target', 'system.slice', 'systemd-journald.socket', '-.mount', 'network-online.target']
+**SupplementaryGroups=[]
+**EnvironmentFiles=/home/mks/printer_data/systemd/klipper.env
+**ExecStart=/home/mks/klippy-env/bin/python $KLIPPER_ARGS
+**WorkingDirectory=/home/mks/klipper
+**FragmentPath=/etc/systemd/system/klipper.service
+**Description=Klipper 3D Printer Firmware SV1
+**User=mks
+Connected to Spoolman Spool Manager
+Git Repo moonraker: No warnings detected
+Git Repo klipper: No warnings detected
+Git Repo fluidd-config: No warnings detected
+Git Repo crowsnest: No warnings detected
+Git Repo FreeDi: No warnings detected
+Git Repo mobileraker: No warnings detected
+Git Repo klipper-backup: No warnings detected
+Git Repo beacon: No warnings detected
+Git Repo klipper_tmc_autotune: No warnings detected
+Git Repo Klippain-ShakeTune: No warnings detected
+Git Repo KAMP: Warnings detected:
+  Repo is dirty.  Detected the following modified files: ['Configuration/Adaptive_Meshing.cfg', 'Configuration/Line_Purge.cfg']
+Klipper Version: v0.13.0-190-g5eb07966-dirty
+2026-03-27 00:14:13,312 [websockets.py:on_close()] - Websocket Closed: ID: 281473033879056 Close Code: 1001, Close Reason: None, Pong Time Elapsed: 2.56
+2026-03-27 00:14:15,924 [authorization.py:_check_trusted_connection()] - Trusted Connection Detected, IP: 192.168.1.10
+2026-03-27 00:14:16,054 [application.py:log_request()] - 101 GET /websocket?token=JYMM5K4VIB33YRRTT34RRLSXTU2DWJV2 (192.168.1.10) [_TRUSTED_USER_] 3.48ms
+2026-03-27 00:14:16,054 [websockets.py:open()] - Websocket Opened: ID: 281473035465232, Proxied: False, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36, Host Name: qdp4.cduckett.net
+2026-03-27 00:14:16,060 [websockets.py:_handle_identify()] - Websocket 281473035465232 Client Identified - Name: fluidd, Version: 1.36.2-248f8a2, Type: web
+2026-03-27 00:14:16,061 [file_manager.py:get_file_list()] - Updating File List <config>...
+2026-03-27 00:21:26,594 [websockets.py:on_close()] - Websocket Closed: ID: 281473034089936 Close Code: None, Close Reason: None, Pong Time Elapsed: 5.89
+2026-03-27 00:21:26,595 [websockets.py:on_close()] - Websocket Closed: ID: 281473035465232 Close Code: None, Close Reason: None, Pong Time Elapsed: 0.49
+2026-03-27 00:59:00,706 [authorization.py:_check_trusted_connection()] - Trusted Connection Detected, IP: 192.168.1.180
+2026-03-27 00:59:00,864 [application.py:log_request()] - 101 GET /websocket?token=FWGQCTN4QDBJDFORGMPRKSGWRWFL2T7C (192.168.1.180) [_TRUSTED_USER_] 4.75ms
+2026-03-27 00:59:00,865 [websockets.py:open()] - Websocket Opened: ID: 281473034121168, Proxied: False, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36, Host Name: 192.168.1.33
+2026-03-27 00:59:00,887 [websockets.py:_handle_identify()] - Websocket 281473034121168 Client Identified - Name: fluidd, Version: 1.36.2-248f8a2, Type: web
+2026-03-27 00:59:00,902 [file_manager.py:get_file_list()] - Updating File List <config>...
+2026-03-27 00:59:02,012 [application.py:log_request()] - 101 GET /websocket?token=SSBE3DATKICG3DLQL47TSI4MLYWEUXDL (192.168.1.10) [_TRUSTED_USER_] 3.28ms
+2026-03-27 00:59:02,013 [websockets.py:open()] - Websocket Opened: ID: 281473035464464, Proxied: False, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36, Host Name: qdp4.cduckett.net
+2026-03-27 00:59:02,030 [websockets.py:_handle_identify()] - Websocket 281473035464464 Client Identified - Name: fluidd, Version: 1.36.2-248f8a2, Type: web
+2026-03-27 00:59:02,031 [file_manager.py:get_file_list()] - Updating File List <config>...
+2026-03-27 01:59:25,522 [websockets.py:on_close()] - Websocket Closed: ID: 281473035464464 Close Code: None, Close Reason: None, Pong Time Elapsed: 2.22
+2026-03-27 01:59:25,526 [websockets.py:on_close()] - Websocket Closed: ID: 281473034121168 Close Code: None, Close Reason: None, Pong Time Elapsed: 4.32
+2026-03-27 02:00:03,766 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 192.168.1.10
+2026-03-27 02:00:03,767 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 192.168.1.180
+2026-03-27 15:44:59,349 [authorization.py:_check_trusted_connection()] - Trusted Connection Detected, IP: 170.85.98.209
+2026-03-27 15:44:59,765 [application.py:log_request()] - 101 GET /websocket?token=XO7QOIZV5NLNICF4WV2L6QPRCDQJU2HQ (170.85.98.209) [_TRUSTED_USER_] 4.55ms
+2026-03-27 15:44:59,767 [websockets.py:open()] - Websocket Opened: ID: 281473035440016, Proxied: True, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36, Host Name: qdp4.cduckett.net
+2026-03-27 15:44:59,796 [websockets.py:_handle_identify()] - Websocket 281473035440016 Client Identified - Name: fluidd, Version: 1.36.2-248f8a2, Type: web
+2026-03-27 15:44:59,800 [file_manager.py:get_file_list()] - Updating File List <config>...
+2026-03-27 16:45:03,865 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 170.85.98.209
+2026-03-27 17:16:08,193 [websockets.py:on_close()] - Websocket Closed: ID: 281473035440016 Close Code: None, Close Reason: None, Pong Time Elapsed: 6.64
+2026-03-27 17:16:10,821 [authorization.py:_check_trusted_connection()] - Trusted Connection Detected, IP: 170.85.98.184
+2026-03-27 17:16:11,023 [application.py:log_request()] - 101 GET /websocket?token=34JJS2UFYL43HWZK3XN4J5HJRMM2D2UR (170.85.98.184) [_TRUSTED_USER_] 3.67ms
+2026-03-27 17:16:11,024 [websockets.py:open()] - Websocket Opened: ID: 281473034955408, Proxied: True, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36, Host Name: qdp4.cduckett.net
+2026-03-27 17:16:11,050 [websockets.py:_handle_identify()] - Websocket 281473034955408 Client Identified - Name: fluidd, Version: 1.36.2-248f8a2, Type: web
+2026-03-27 17:16:11,051 [file_manager.py:get_file_list()] - Updating File List <config>...
+2026-03-27 18:20:03,874 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 170.85.98.184
+2026-03-27 19:02:51,730 [websockets.py:write_to_socket()] - Websocket closed while writing: 281473034955408
+2026-03-27 19:02:56,602 [websockets.py:on_close()] - Websocket Closed: ID: 281473034955408 Close Code: None, Close Reason: None, Pong Time Elapsed: 24.95
+2026-03-27 19:03:23,838 [web.py:log_exception()] - 401 GET /access/oneshot_token (136.226.103.113): Unauthorized
+2026-03-27 19:03:23,876 [application.py:log_request()] - 401 GET /access/oneshot_token (136.226.103.113) [No User] 43.41ms
+2026-03-27 21:22:04,095 [spoolman.py:_read_messages()] - Spoolman Disconnected - Code: None, Reason: None, Server Ping Time Elapsed: 45.04000000003725
+2026-03-27 21:22:06,097 [spoolman.py:_connect_websocket()] - Connecting To Spoolman: ws://192.168.1.10:7912/api/v1/spool
+2026-03-27 21:22:07,161 [server.py:add_log_rollover_item()] - Failed to Connect to spoolman: [Errno 113] No route to host
+2026-03-27 21:56:48,905 [server.py:add_log_rollover_item()] - Failed to Connect to spoolman: [Errno 111] Connection refused
+2026-03-27 21:59:00,245 [server.py:add_log_rollover_item()] - Connected to Spoolman Spool Manager
+2026-03-27 21:59:00,276 [spoolman.py:_check_spool_deleted()] - Found Spool ID 14 on spoolman instance
+2026-03-27 21:59:01,842 [authorization.py:_check_trusted_connection()] - Trusted Connection Detected, IP: 192.168.1.10
+2026-03-27 23:00:03,909 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 192.168.1.10
