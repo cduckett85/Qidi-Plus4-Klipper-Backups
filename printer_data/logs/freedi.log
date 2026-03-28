@@ -209,3 +209,4 @@ Printer is halted
 2026-03-28 05:12:40 - Error at POST-Request: 400 Client Error: Must home X and Y axes before homing Z for url: http://127.0.0.1:7125/printer/gcode/script - ERROR
 2026-03-28 05:12:45 - Error at POST-Request: 400 Client Error: Must home X and Y axes before homing Z for url: http://127.0.0.1:7125/printer/gcode/script - ERROR
 2026-03-28 05:12:47 - Error at POST-Request: 400 Client Error: Must home X and Y axes before homing Z for url: http://127.0.0.1:7125/printer/gcode/script - ERROR
+2026-03-28 05:28:55 - WebSocket connection lost, restarting... - WARNING
