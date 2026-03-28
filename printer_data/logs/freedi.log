@@ -205,3 +205,7 @@ Printer is halted
 2026-03-28 04:45:25 - WebSocket connection lost, restarting... - WARNING
 2026-03-28 04:52:11 - Error at POST-Request: 400 Client Error: Move out of range: 152.500 171.300 305.004 [-5.000] for url: http://127.0.0.1:7125/printer/gcode/script - ERROR
 2026-03-28 05:03:55 - WebSocket connection lost, restarting... - WARNING
+2026-03-28 05:06:43 - WebSocket connection lost, restarting... - WARNING
+2026-03-28 05:12:40 - Error at POST-Request: 400 Client Error: Must home X and Y axes before homing Z for url: http://127.0.0.1:7125/printer/gcode/script - ERROR
+2026-03-28 05:12:45 - Error at POST-Request: 400 Client Error: Must home X and Y axes before homing Z for url: http://127.0.0.1:7125/printer/gcode/script - ERROR
+2026-03-28 05:12:47 - Error at POST-Request: 400 Client Error: Must home X and Y axes before homing Z for url: http://127.0.0.1:7125/printer/gcode/script - ERROR
