@@ -203,3 +203,4 @@ Printer is halted
 2026-03-28 04:09:19 - WebSocket connection lost, restarting... - WARNING
 2026-03-28 04:30:15 - WebSocket connection lost, restarting... - WARNING
 2026-03-28 04:45:25 - WebSocket connection lost, restarting... - WARNING
+2026-03-28 04:52:11 - Error at POST-Request: 400 Client Error: Move out of range: 152.500 171.300 305.004 [-5.000] for url: http://127.0.0.1:7125/printer/gcode/script - ERROR
