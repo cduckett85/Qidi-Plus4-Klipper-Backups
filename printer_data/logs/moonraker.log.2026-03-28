@@ -1,0 +1,950 @@
+-------------------- Log Start | Sat Mar 28 02:29:14 2026 --------------------
+platform: Linux-6.6.62-current-rockchip64-aarch64-with-glibc2.36
+data_path: /home/mks/printer_data
+is_default_data_path: False
+config_file: /home/mks/printer_data/config/moonraker.conf
+backup_config: /home/mks/printer_data/config/.moonraker.conf.bkp
+startup_warnings: []
+verbose: False
+debug: False
+asyncio_debug: False
+is_backup_config: False
+is_python_package: False
+instance_uuid: ffe2e77b8e654b2ebb55adc41a3b0179
+unix_socket_path: /home/mks/printer_data/comms/moonraker.sock
+structured_logging: False
+software_version: v0.10.0-0-g16e530e
+git_branch: master
+git_remote: origin
+git_repo_url: https://github.com/Arksine/moonraker
+modified_files: []
+unofficial_components: []
+log_file: /home/mks/printer_data/logs/moonraker.log
+python_version: 3.11.2 (main, Apr 28 2025, 14:11:48) [GCC 12.2.0]
+launch_args: /home/mks/moonraker-env/bin/python /home/mks/moonraker/moonraker/moonraker.py -d /home/mks/printer_data
+msgspec_enabled: True
+uvloop_enabled: True
+
+#################### Moonraker Configuration ####################
+
+[server]
+host = 0.0.0.0
+port = 7125
+klippy_uds_address = /home/mks/printer_data/comms/klippy.sock
+
+[authorization]
+trusted_clients = 
+	10.0.0.0/8
+	127.0.0.0/8
+	169.254.0.0/16
+	172.16.0.0/12
+	192.168.0.0/16
+	FE80::/10
+	::1/128
+	172.71.0.0/16
+	170.85.0.0/16
+cors_domains = 
+	*.lan
+	*.local
+	*://localhost
+	*://localhost:*
+	*://my.mainsail.xyz
+	*://app.fluidd.xyz
+	*://ad5m.cduckett.net
+	*://qdp4.cduckett.net
+
+[octoprint_compat]
+
+[history]
+
+[file_manager]
+enable_object_processing = True
+
+[announcements]
+subscriptions = 
+	FreeDi
+
+[spoolman]
+server = http://192.168.1.10:7912
+
+[update_manager]
+channel = stable
+refresh_interval = 168
+
+[update_manager mainsail]
+type = web
+channel = stable
+repo = mainsail-crew/mainsail
+path = ~/mainsail
+
+[update_manager fluidd]
+type = web
+channel = stable
+repo = fluidd-core/fluidd
+path = /home/mks/fluidd
+persistent_files = 
+	config.json
+
+[update_manager fluidd-config]
+type = git_repo
+origin = https://github.com/fluidd-core/fluidd-config.git
+path = /home/mks/fluidd-config
+primary_branch = master
+managed_services = klipper
+
+[update_manager crowsnest]
+type = git_repo
+origin = https://github.com/mainsail-crew/crowsnest.git
+path = ~/crowsnest
+install_script = tools/pkglist.sh
+
+[update_manager FreeDi]
+type = git_repo
+channel = stable
+origin = https://github.com/Phil1988/FreeDi
+path = ~/FreeDi
+virtualenv = ~/klippy-env
+requirements = requirements.txt
+managed_services = FreeDi
+info_tags = 
+	desc=FreeDi
+
+[update_manager mobileraker]
+type = git_repo
+origin = https://github.com/Clon1998/mobileraker_companion.git
+path = /home/mks/mobileraker_companion
+primary_branch = main
+env = /home/mks/mobileraker-env/bin/python
+requirements = /home/mks/mobileraker_companion/scripts/mobileraker-requirements.txt
+install_script = /home/mks/mobileraker_companion/scripts/install.sh
+managed_services = mobileraker
+
+[update_manager klipper-backup]
+type = git_repo
+origin = https://github.com/Staubgeborener/klipper-backup.git
+path = ~/klipper-backup
+primary_branch = main
+managed_services = moonraker
+
+[update_manager beacon]
+type = git_repo
+channel = dev
+origin = https://github.com/beacon3d/beacon_klipper.git
+path = ~/beacon_klipper
+env = ~/klippy-env/bin/python
+requirements = requirements.txt
+install_script = install.sh
+is_system_service = False
+managed_services = klipper
+info_tags = 
+	desc=Beacon Surface Scanner
+
+[update_manager klipper_tmc_autotune]
+type = git_repo
+channel = dev
+origin = https://github.com/andrewmcgr/klipper_tmc_autotune
+path = /home/mks/klipper_tmc_autotune
+primary_branch = main
+managed_services = klipper
+
+[update_manager Klippain-ShakeTune]
+type = git_repo
+origin = https://github.com/Frix-x/klippain-shaketune.git
+path = ~/klippain_shaketune
+virtualenv = /home/mks/klippy-env
+requirements = requirements.txt
+system_dependencies = system-dependencies.json
+primary_branch = main
+managed_services = klipper
+
+[update_manager KAMP]
+type = git_repo
+origin = https://github.com/kyleisah/Klipper-Adaptive-Meshing-Purging.git
+path = ~/Klipper-Adaptive-Meshing-Purging
+primary_branch = main
+managed_services = klipper
+
+#################################################################
+All Configuration Files:
+/home/mks/printer_data/config/moonraker.conf
+#################################################################
+Loading Sqlite database provider. Sqlite Version: 3.40.1
+Unsafe Shutdown Count: 4
+
+System Info:
+
+***python***
+  version: (3, 11, 2, 'final', 0)
+  version_string: 3.11.2 (main, Apr 28 2025, 14:11:48) [GCC 12.2.0]
+
+***cpu_info***
+  cpu_count: 4
+  bits: 64bit
+  processor: aarch64
+  cpu_desc: 
+  serial_number: 
+  hardware_desc: 
+  model: 
+  total_memory: 999276
+  memory_units: kB
+
+***sd_info***
+
+***distribution***
+  name: Armbian-unofficial 24.11.1 bookworm
+  id: debian
+  version: 12
+  version_parts: {'major': '12', 'minor': '', 'build_number': ''}
+  like: 
+  codename: bookworm
+  release_info: {'name': '# PLEASE DO NOT EDIT THIS FILE', 'id': 'armbian'}
+  kernel_version: 6.6.62-current-rockchip64
+
+***virtualization***
+  virt_type: none
+  virt_identifier: none
+
+***network***
+
+***canbus***
+
+***Allowed Services***
+  klipper_mcu
+  webcamd
+  MoonCord
+  KlipperScreen
+  moonraker-telegram-bot
+  moonraker-obico
+  sonar
+  crowsnest
+  octoeverywhere
+  ratos-configurator
+  FreeDi
+  mobileraker
+Module libcamera unavailable, import failed
+
+Systemd unit moonraker.service:
+unit_name: moonraker.service
+is_default: True
+manager: systemd
+Properties:
+**Requires=['network-online.target', '-.mount', 'sysinit.target', 'system.slice']
+**After=['system.slice', 'basic.target', '-.mount', 'systemd-journald.socket', 'network-online.target', 'sysinit.target']
+**SupplementaryGroups=['moonraker-admin']
+**EnvironmentFiles=/home/mks/printer_data/systemd/moonraker.env
+**ExecStart=/home/mks/moonraker-env/bin/python $MOONRAKER_ARGS
+**WorkingDirectory=/home/mks/moonraker
+**FragmentPath=/etc/systemd/system/moonraker.service
+**Description=API Server for Klipper SV1
+**User=mks
+
+Systemd unit klipper.service:
+unit_name: klipper.service
+is_default: True
+manager: systemd
+Properties:
+**Requires=['sysinit.target', 'system.slice', '-.mount']
+**After=['basic.target', 'sysinit.target', 'system.slice', 'systemd-journald.socket', '-.mount', 'network-online.target']
+**SupplementaryGroups=[]
+**EnvironmentFiles=/home/mks/printer_data/systemd/klipper.env
+**ExecStart=/home/mks/klippy-env/bin/python $KLIPPER_ARGS
+**WorkingDirectory=/home/mks/klipper
+**FragmentPath=/etc/systemd/system/klipper.service
+**Description=Klipper 3D Printer Firmware SV1
+**User=mks
+Connected to Spoolman Spool Manager
+Git Repo moonraker: No warnings detected
+Git Repo klipper: No warnings detected
+Git Repo fluidd-config: No warnings detected
+Git Repo crowsnest: No warnings detected
+Git Repo FreeDi: No warnings detected
+Git Repo mobileraker: No warnings detected
+Git Repo klipper-backup: No warnings detected
+Git Repo beacon: No warnings detected
+Git Repo klipper_tmc_autotune: No warnings detected
+Git Repo Klippain-ShakeTune: No warnings detected
+Git Repo KAMP: Warnings detected:
+  Repo is dirty.  Detected the following modified files: ['Configuration/Adaptive_Meshing.cfg', 'Configuration/Line_Purge.cfg']
+Klipper Version: v0.13.0-190-g5eb07966-dirty
+2026-03-28 02:29:14,425 [authorization.py:_check_trusted_connection()] - Trusted Connection Detected, IP: 192.168.1.10
+2026-03-28 02:29:14,583 [application.py:log_request()] - 101 GET /websocket?token=RRNB3ZXSVUTPSR36SR3VNH5R3GHRCHUQ (192.168.1.10) [_TRUSTED_USER_] 4.06ms
+2026-03-28 02:29:14,584 [websockets.py:open()] - Websocket Opened: ID: 281473036264528, Proxied: False, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36, Host Name: qdp4.cduckett.net
+2026-03-28 02:29:14,590 [websockets.py:_handle_identify()] - Websocket 281473036264528 Client Identified - Name: fluidd, Version: 1.36.2-248f8a2, Type: web
+2026-03-28 02:29:14,594 [file_manager.py:get_file_list()] - Updating File List <config>...
+2026-03-28 02:41:43,894 [authorization.py:_check_trusted_connection()] - Trusted Connection Detected, IP: 192.168.1.116
+2026-03-28 02:41:43,921 [application.py:log_request()] - 101 GET /websocket?token=DMGP5I6IYPY3FWVAEHFOUQUOSOGFP4NY (192.168.1.116) [_TRUSTED_USER_] 4.37ms
+2026-03-28 02:41:43,922 [websockets.py:open()] - Websocket Opened: ID: 281473034962192, Proxied: False, User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36, Host Name: 192.168.1.33
+2026-03-28 02:41:43,933 [websockets.py:_handle_identify()] - Websocket 281473034962192 Client Identified - Name: fluidd, Version: 1.36.2-248f8a2, Type: web
+2026-03-28 02:41:43,934 [file_manager.py:get_file_list()] - Updating File List <config>...
+2026-03-28 03:29:56,581 [authorization.py:_check_trusted_connection()] - Trusted Connection Detected, IP: 127.0.0.1
+2026-03-28 03:29:57,989 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 03:35:03,940 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 192.168.1.10
+2026-03-28 03:36:55,849 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 03:41:30,054 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 03:45:03,941 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 192.168.1.116
+2026-03-28 03:53:52,222 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 04:07:50,150 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 04:09:05,679 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2026-03-28 04:09:06,153 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2026-03-28 04:09:06,203 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2026-03-28 04:09:07,229 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2026-03-28 04:09:17,356 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2026-03-28 04:09:17,360 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2026-03-28 04:09:17,607 [job_state.py:_handle_started()] - Job state initialized: standby
+2026-03-28 04:09:17,900 [klippy_connection.py:_check_ready()] - Klippy ready
+2026-03-28 04:09:18,358 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor beacon_coil', 'temperature_sensor mainboard_mcu', 'temperature_sensor toolhead_mcu', 'temperature_sensor Mainboard_RK3328', 'heater_bed', 'heater_generic chamber', 'temperature_sensor chamber_probe', 'temperature_sensor chamber_thermal_protection_sensor', 'extruder', 'tmc2240 stepper_x', 'tmc2240 stepper_y']
+2026-03-28 04:09:19,574 [websockets.py:on_close()] - Websocket Closed: ID: 281473033915280 Close Code: 1000, Close Reason: None, Pong Time Elapsed: 7.74
+2026-03-28 04:09:21,590 [application.py:log_request()] - 101 GET /websocket (127.0.0.1) [_TRUSTED_USER_] 2.61ms
+2026-03-28 04:09:21,590 [websockets.py:open()] - Websocket Opened: ID: 281473035578576, Proxied: False, User Agent: , Host Name: 127.0.0.1
+2026-03-28 04:09:21,597 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 04:15:37,603 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 60.00 seconds
+2026-03-28 04:16:37,604 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 120.00 seconds
+2026-03-28 04:17:19,547 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 04:24:30,898 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 04:29:47,169 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 04:30:06,184 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2026-03-28 04:30:06,309 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2026-03-28 04:30:06,675 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2026-03-28 04:30:06,691 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 04:30:07,459 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2026-03-28 04:30:14,089 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2026-03-28 04:30:14,093 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2026-03-28 04:30:14,333 [job_state.py:_handle_started()] - Job state initialized: standby
+2026-03-28 04:30:14,585 [klippy_connection.py:_check_ready()] - Klippy ready
+2026-03-28 04:30:15,094 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor beacon_coil', 'temperature_sensor mainboard_mcu', 'temperature_sensor toolhead_mcu', 'temperature_sensor Mainboard_RK3328', 'heater_bed', 'heater_generic chamber', 'temperature_sensor chamber_probe', 'temperature_sensor chamber_thermal_protection_sensor', 'extruder', 'tmc2240 stepper_x', 'tmc2240 stepper_y']
+2026-03-28 04:30:15,686 [websockets.py:on_close()] - Websocket Closed: ID: 281473035578576 Close Code: 1000, Close Reason: None, Pong Time Elapsed: 3.96
+2026-03-28 04:30:17,694 [application.py:log_request()] - 101 GET /websocket (127.0.0.1) [_TRUSTED_USER_] 3.76ms
+2026-03-28 04:30:17,695 [websockets.py:open()] - Websocket Opened: ID: 281473033563664, Proxied: False, User Agent: , Host Name: 127.0.0.1
+2026-03-28 04:30:17,700 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 04:31:36,319 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 60.00 seconds
+2026-03-28 04:32:36,320 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 120.00 seconds
+2026-03-28 04:33:10,633 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 04:45:00,299 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 04:45:16,200 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2026-03-28 04:45:16,228 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2026-03-28 04:45:16,635 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2026-03-28 04:45:17,460 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2026-03-28 04:45:23,838 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2026-03-28 04:45:23,842 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2026-03-28 04:45:24,094 [job_state.py:_handle_started()] - Job state initialized: standby
+2026-03-28 04:45:24,357 [klippy_connection.py:_check_ready()] - Klippy ready
+2026-03-28 04:45:24,835 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor beacon_coil', 'temperature_sensor mainboard_mcu', 'temperature_sensor toolhead_mcu', 'temperature_sensor Mainboard_RK3328', 'heater_bed', 'heater_generic chamber', 'temperature_sensor chamber_probe', 'temperature_sensor chamber_thermal_protection_sensor', 'extruder', 'tmc2240 stepper_x', 'tmc2240 stepper_y']
+2026-03-28 04:45:25,759 [websockets.py:on_close()] - Websocket Closed: ID: 281473033563664 Close Code: 1000, Close Reason: None, Pong Time Elapsed: 7.98
+2026-03-28 04:45:27,767 [application.py:log_request()] - 101 GET /websocket (127.0.0.1) [_TRUSTED_USER_] 3.86ms
+2026-03-28 04:45:27,768 [websockets.py:open()] - Websocket Opened: ID: 281473033693712, Proxied: False, User Agent: , Host Name: 127.0.0.1
+2026-03-28 04:45:27,773 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 04:47:46,507 [application.py:log_request()] - 101 GET /websocket (192.168.1.10) [_API_KEY_USER_] 3.87ms
+2026-03-28 04:47:46,508 [websockets.py:open()] - Websocket Opened: ID: 281473035012944, Proxied: False, User Agent: Dart/3.11 (dart:io), Host Name: qdp4.cduckett.net
+2026-03-28 04:47:46,538 [websockets.py:_handle_identify()] - Websocket 281473035012944 Client Identified - Name: Mobileraker-ios, Version: 2.9.7-702, Type: mobile
+2026-03-28 04:49:02,344 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 60.00 seconds
+2026-03-28 04:50:02,346 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 120.00 seconds
+2026-03-28 04:50:36,507 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 04:52:11,961 [application.py:log_request()] - 400 POST /printer/gcode/script (127.0.0.1) [_TRUSTED_USER_] 24.84ms
+2026-03-28 04:55:46,756 [websockets.py:write_to_socket()] - Websocket closed while writing: 281473035012944
+2026-03-28 04:55:51,549 [websockets.py:on_close()] - Websocket Closed: ID: 281473035012944 Close Code: None, Close Reason: None, Pong Time Elapsed: 25.00
+2026-03-28 05:03:33,132 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 05:03:46,504 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2026-03-28 05:03:46,538 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2026-03-28 05:03:46,821 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2026-03-28 05:03:47,767 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2026-03-28 05:03:54,098 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2026-03-28 05:03:54,101 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2026-03-28 05:03:54,346 [job_state.py:_handle_started()] - Job state initialized: standby
+2026-03-28 05:03:54,597 [klippy_connection.py:_check_ready()] - Klippy ready
+2026-03-28 05:03:55,096 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor beacon_coil', 'temperature_sensor mainboard_mcu', 'temperature_sensor toolhead_mcu', 'temperature_sensor Mainboard_RK3328', 'heater_bed', 'heater_generic chamber', 'temperature_sensor chamber_probe', 'temperature_sensor chamber_thermal_protection_sensor', 'extruder', 'tmc2240 stepper_x', 'tmc2240 stepper_y']
+2026-03-28 05:03:55,853 [websockets.py:on_close()] - Websocket Closed: ID: 281473033693712 Close Code: 1000, Close Reason: None, Pong Time Elapsed: 7.97
+2026-03-28 05:03:57,867 [application.py:log_request()] - 101 GET /websocket (127.0.0.1) [_TRUSTED_USER_] 6.22ms
+2026-03-28 05:03:57,868 [websockets.py:open()] - Websocket Opened: ID: 281473035024400, Proxied: False, User Agent: , Host Name: 127.0.0.1
+2026-03-28 05:03:57,878 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 05:06:17,911 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 05:06:34,256 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2026-03-28 05:06:34,291 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2026-03-28 05:06:34,629 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2026-03-28 05:06:35,516 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2026-03-28 05:06:41,715 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2026-03-28 05:06:41,718 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2026-03-28 05:06:41,966 [job_state.py:_handle_started()] - Job state initialized: standby
+2026-03-28 05:06:42,217 [klippy_connection.py:_check_ready()] - Klippy ready
+2026-03-28 05:06:42,717 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor beacon_coil', 'temperature_sensor mainboard_mcu', 'temperature_sensor toolhead_mcu', 'temperature_sensor Mainboard_RK3328', 'heater_bed', 'heater_generic chamber', 'temperature_sensor chamber_probe', 'temperature_sensor chamber_thermal_protection_sensor', 'extruder', 'tmc2240 stepper_x', 'tmc2240 stepper_y']
+2026-03-28 05:06:43,873 [websockets.py:on_close()] - Websocket Closed: ID: 281473035024400 Close Code: 1000, Close Reason: None, Pong Time Elapsed: 5.98
+2026-03-28 05:06:45,880 [application.py:log_request()] - 101 GET /websocket (127.0.0.1) [_TRUSTED_USER_] 3.10ms
+2026-03-28 05:06:45,881 [websockets.py:open()] - Websocket Opened: ID: 281473035049872, Proxied: False, User Agent: , Host Name: 127.0.0.1
+2026-03-28 05:06:45,886 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 05:12:40,879 [application.py:log_request()] - 400 POST /printer/gcode/script (127.0.0.1) [_TRUSTED_USER_] 826.93ms
+2026-03-28 05:12:45,743 [application.py:log_request()] - 400 POST /printer/gcode/script (127.0.0.1) [_TRUSTED_USER_] 832.52ms
+2026-03-28 05:12:47,712 [application.py:log_request()] - 400 POST /printer/gcode/script (127.0.0.1) [_TRUSTED_USER_] 841.47ms
+2026-03-28 05:15:01,280 [application.py:log_request()] - 101 GET /websocket (192.168.1.10) [_API_KEY_USER_] 4.57ms
+2026-03-28 05:15:01,281 [websockets.py:open()] - Websocket Opened: ID: 281473031613584, Proxied: False, User Agent: Dart/3.11 (dart:io), Host Name: qdp4.cduckett.net
+2026-03-28 05:15:01,288 [websockets.py:_handle_identify()] - Websocket 281473031613584 Client Identified - Name: Mobileraker-ios, Version: 2.9.7-702, Type: mobile
+2026-03-28 05:17:11,350 [websockets.py:write_to_socket()] - Websocket closed while writing: 281473031613584
+2026-03-28 05:17:16,297 [websockets.py:on_close()] - Websocket Closed: ID: 281473031613584 Close Code: None, Close Reason: None, Pong Time Elapsed: 25.00
+2026-03-28 05:18:28,656 [application.py:log_request()] - 101 GET /websocket (192.168.1.10) [_API_KEY_USER_] 6.24ms
+2026-03-28 05:18:28,658 [websockets.py:open()] - Websocket Opened: ID: 281473036323152, Proxied: False, User Agent: Dart/3.11 (dart:io), Host Name: qdp4.cduckett.net
+2026-03-28 05:18:28,667 [websockets.py:_handle_identify()] - Websocket 281473036323152 Client Identified - Name: Mobileraker-ios, Version: 2.9.7-702, Type: mobile
+2026-03-28 05:21:38,095 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 60.00 seconds
+2026-03-28 05:22:38,096 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 120.00 seconds
+2026-03-28 05:23:24,955 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 05:24:08,918 [websockets.py:write_to_socket()] - Websocket closed while writing: 281473036323152
+2026-03-28 05:24:13,694 [websockets.py:on_close()] - Websocket Closed: ID: 281473036323152 Close Code: None, Close Reason: None, Pong Time Elapsed: 25.00
+2026-03-28 05:27:30,996 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 05:28:47,369 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2026-03-28 05:28:47,412 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2026-03-28 05:28:47,748 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2026-03-28 05:28:48,637 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2026-03-28 05:28:54,958 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2026-03-28 05:28:54,962 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2026-03-28 05:28:55,215 [job_state.py:_handle_started()] - Job state initialized: standby
+2026-03-28 05:28:55,462 [klippy_connection.py:_check_ready()] - Klippy ready
+2026-03-28 05:28:55,958 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor beacon_coil', 'temperature_sensor mainboard_mcu', 'temperature_sensor toolhead_mcu', 'temperature_sensor Mainboard_RK3328', 'heater_bed', 'heater_generic chamber', 'temperature_sensor chamber_probe', 'temperature_sensor chamber_thermal_protection_sensor', 'extruder', 'tmc2240 stepper_x', 'tmc2240 stepper_y']
+2026-03-28 05:28:55,993 [websockets.py:on_close()] - Websocket Closed: ID: 281473035049872 Close Code: 1000, Close Reason: None, Pong Time Elapsed: 9.97
+2026-03-28 05:29:07,488 [application.py:log_request()] - 101 GET /websocket (127.0.0.1) [_TRUSTED_USER_] 5.95ms
+2026-03-28 05:29:07,489 [websockets.py:open()] - Websocket Opened: ID: 281473034871632, Proxied: False, User Agent: , Host Name: 127.0.0.1
+2026-03-28 05:29:07,501 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 05:31:09,550 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 60.00 seconds
+2026-03-28 05:32:09,552 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 120.00 seconds
+2026-03-28 05:32:47,720 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 05:34:03,787 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2026-03-28 05:34:03,945 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2026-03-28 05:34:04,290 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 05:34:04,327 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2026-03-28 05:34:05,055 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2026-03-28 05:34:12,258 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2026-03-28 05:34:12,263 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2026-03-28 05:34:12,522 [job_state.py:_handle_started()] - Job state initialized: standby
+2026-03-28 05:34:12,766 [klippy_connection.py:_check_ready()] - Klippy ready
+2026-03-28 05:34:13,262 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor beacon_coil', 'temperature_sensor mainboard_mcu', 'temperature_sensor toolhead_mcu', 'temperature_sensor Mainboard_RK3328', 'heater_bed', 'heater_generic chamber', 'temperature_sensor chamber_probe', 'temperature_sensor chamber_thermal_protection_sensor', 'extruder', 'tmc2240 stepper_x', 'tmc2240 stepper_y']
+2026-03-28 05:34:13,537 [websockets.py:on_close()] - Websocket Closed: ID: 281473034871632 Close Code: 1000, Close Reason: None, Pong Time Elapsed: 6.01
+2026-03-28 05:34:15,548 [application.py:log_request()] - 101 GET /websocket (127.0.0.1) [_TRUSTED_USER_] 3.67ms
+2026-03-28 05:34:15,549 [websockets.py:open()] - Websocket Opened: ID: 281473033839568, Proxied: False, User Agent: , Host Name: 127.0.0.1
+2026-03-28 05:34:15,553 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 05:36:00,722 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 60.00 seconds
+2026-03-28 05:44:20,778 [authorization.py:_check_trusted_connection()] - Trusted Connection Detected, IP: 192.168.1.10
+2026-03-28 05:46:35,145 [application.py:prepare()] - Upload Request Received from 192.168.1.10
+Content-Type: multipart/form-data; boundary=------------------------a693f7a20d5f9362
+2026-03-28 05:46:35,183 [application.py:post()] - Processing Uploaded File: FirstLayerCalibration-FirstLayer_ASA_2m22s.gcode
+2026-03-28 05:46:35,800 [shell_command.py:pipe_data_received()] - INFO:metadata:File 'FirstLayerCalibration-FirstLayer_ASA_2m22s.gcode' currently supports cancellation, processing aborted
+
+2026-03-28 05:46:36,059 [shell_command.py:_check_proc_success()] - Command (/home/mks/moonraker-env/bin/python /home/mks/moonraker/moonraker/components/file_manager/metadata.py -c /tmp/metacfg-qpj_9u0v.json) successfully finished
+2026-03-28 05:46:36,063 [klippy_apis.py:start_print()] - Requesting Job Start, filename = FirstLayerCalibration-FirstLayer_ASA_2m22s.gcode
+2026-03-28 05:46:36,105 [application.py:log_request()] - 201 POST /api/files/local (192.168.1.10) [_TRUSTED_USER_] 962.67ms
+2026-03-28 05:46:36,175 [job_state.py:_send_job_event()] - Job Started: FirstLayerCalibration-FirstLayer_ASA_2m22s.gcode
+2026-03-28 05:46:36,701 [authorization.py:_check_trusted_connection()] - Trusted Connection Detected, IP: 192.168.1.116
+2026-03-28 05:46:37,626 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 05:46:38,657 [application.py:log_request()] - 101 GET /websocket?token=SWR435UYKSI55IW4P7YUBRXPUVAI7UNW (192.168.1.10) [_TRUSTED_USER_] 2.80ms
+2026-03-28 05:46:38,657 [websockets.py:open()] - Websocket Opened: ID: 281473036211600, Proxied: False, User Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) BBL-Slicer/v01.10.01.50 (dark) BBL-Language/en, Host Name: 192.168.1.33
+2026-03-28 05:46:38,666 [websockets.py:_handle_identify()] - Websocket 281473036211600 Client Identified - Name: fluidd, Version: 1.36.2-248f8a2, Type: web
+2026-03-28 05:46:38,667 [file_manager.py:get_file_list()] - Updating File List <config>...
+2026-03-28 05:46:39,146 [websockets.py:write_to_socket()] - Websocket closed while writing: 281473036211600
+2026-03-28 05:46:39,153 [websockets.py:on_close()] - Websocket Closed: ID: 281473036211600 Close Code: None, Close Reason: None, Pong Time Elapsed: 0.50
+2026-03-28 05:52:23,074 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 05:54:09,018 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 05:54:22,196 [klippy_apis.py:cancel_print()] - Requesting job cancel...
+2026-03-28 05:55:22,197 [klippy_connection.py:wait()] - Request 'pause_resume/cancel' pending: 60.00 seconds
+2026-03-28 05:56:22,199 [klippy_connection.py:wait()] - Request 'pause_resume/cancel' pending: 120.00 seconds
+2026-03-28 05:57:06,231 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 60.00 seconds
+2026-03-28 05:57:22,201 [klippy_connection.py:wait()] - Request 'pause_resume/cancel' pending: 180.00 seconds
+2026-03-28 05:57:31,728 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 60.00 seconds
+2026-03-28 05:57:36,549 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 60.00 seconds
+2026-03-28 05:57:42,817 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 60.00 seconds
+2026-03-28 05:57:51,534 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 60.00 seconds
+2026-03-28 05:58:01,279 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 60.00 seconds
+2026-03-28 05:58:06,232 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 120.00 seconds
+2026-03-28 05:58:08,866 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 60.00 seconds
+2026-03-28 05:58:22,202 [klippy_connection.py:wait()] - Request 'pause_resume/cancel' pending: 240.01 seconds
+2026-03-28 05:58:31,729 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 120.00 seconds
+2026-03-28 05:58:36,298 [klippy_connection.py:_process_status_update()] - Klippy has shutdown
+2026-03-28 05:58:36,309 [proc_stats.py:_handle_shutdown()] - 
+Moonraker System Usage Statistics:
+System Time: 1774677486.505116, Usage: 6.66%, Memory: 37180 kB
+System Time: 1774677487.505106, Usage: 2.55%, Memory: 37180 kB
+System Time: 1774677488.509923, Usage: 3.31%, Memory: 37180 kB
+System Time: 1774677489.510719, Usage: 4.15%, Memory: 37180 kB
+System Time: 1774677490.511108, Usage: 4.13%, Memory: 37180 kB
+System Time: 1774677491.513251, Usage: 4.73%, Memory: 37180 kB
+System Time: 1774677492.513573, Usage: 4.15%, Memory: 37180 kB
+System Time: 1774677493.512834, Usage: 4.01%, Memory: 37180 kB
+System Time: 1774677494.513442, Usage: 3.94%, Memory: 37180 kB
+System Time: 1774677495.512457, Usage: 4.12%, Memory: 37180 kB
+System Time: 1774677496.516946, Usage: 6.97%, Memory: 37180 kB
+System Time: 1774677497.514699, Usage: 4.73%, Memory: 37180 kB
+System Time: 1774677498.517311, Usage: 4.72%, Memory: 37180 kB
+System Time: 1774677499.515575, Usage: 4.41%, Memory: 37180 kB
+System Time: 1774677500.512989, Usage: 3.88%, Memory: 37180 kB
+System Time: 1774677501.512536, Usage: 2.68%, Memory: 37180 kB
+System Time: 1774677502.518046, Usage: 2.55%, Memory: 37180 kB
+System Time: 1774677503.519883, Usage: 4.2%, Memory: 37180 kB
+System Time: 1774677504.523678, Usage: 4.03%, Memory: 37180 kB
+System Time: 1774677505.519638, Usage: 4.12%, Memory: 37180 kB
+System Time: 1774677506.515047, Usage: 5.95%, Memory: 37180 kB
+System Time: 1774677507.515919, Usage: 2.69%, Memory: 37180 kB
+System Time: 1774677508.520562, Usage: 3.31%, Memory: 37180 kB
+System Time: 1774677509.521435, Usage: 3.91%, Memory: 37180 kB
+System Time: 1774677510.521885, Usage: 3.96%, Memory: 37180 kB
+System Time: 1774677511.526829, Usage: 4.08%, Memory: 37180 kB
+System Time: 1774677512.522910, Usage: 4.64%, Memory: 37180 kB
+System Time: 1774677513.522557, Usage: 3.87%, Memory: 37180 kB
+System Time: 1774677514.527667, Usage: 3.95%, Memory: 37180 kB
+System Time: 1774677515.523818, Usage: 4.38%, Memory: 37180 kB
+CPU Temperature: 56.818
+2026-03-28 05:58:36,551 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 120.00 seconds
+2026-03-28 05:58:36,930 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.print.cancel, Code: 400, Message: Shutdown due to webhooks request
+Once the underlying issue is corrected, use the
+"FIRMWARE_RESTART" command to reset the firmware, reload the
+config, and restart the host software.
+Printer is shutdown
+
+2026-03-28 05:58:36,932 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.gcode.script, Code: 400, Message: Shutdown due to webhooks request
+Once the underlying issue is corrected, use the
+"FIRMWARE_RESTART" command to reset the firmware, reload the
+config, and restart the host software.
+Printer is shutdown
+
+2026-03-28 05:58:36,938 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.gcode.script, Code: 400, Message: Shutdown due to webhooks request
+Once the underlying issue is corrected, use the
+"FIRMWARE_RESTART" command to reset the firmware, reload the
+config, and restart the host software.
+Printer is shutdown
+
+2026-03-28 05:58:36,939 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.gcode.script, Code: 400, Message: Shutdown due to webhooks request
+Once the underlying issue is corrected, use the
+"FIRMWARE_RESTART" command to reset the firmware, reload the
+config, and restart the host software.
+Printer is shutdown
+
+2026-03-28 05:58:36,940 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.gcode.script, Code: 400, Message: Shutdown due to webhooks request
+Once the underlying issue is corrected, use the
+"FIRMWARE_RESTART" command to reset the firmware, reload the
+config, and restart the host software.
+Printer is shutdown
+
+2026-03-28 05:58:36,941 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.gcode.script, Code: 400, Message: Shutdown due to webhooks request
+Once the underlying issue is corrected, use the
+"FIRMWARE_RESTART" command to reset the firmware, reload the
+config, and restart the host software.
+Printer is shutdown
+
+2026-03-28 05:58:36,947 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.gcode.script, Code: 400, Message: Shutdown due to webhooks request
+Once the underlying issue is corrected, use the
+"FIRMWARE_RESTART" command to reset the firmware, reload the
+config, and restart the host software.
+Printer is shutdown
+
+2026-03-28 05:58:36,947 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.gcode.script, Code: 400, Message: Shutdown due to webhooks request
+Once the underlying issue is corrected, use the
+"FIRMWARE_RESTART" command to reset the firmware, reload the
+config, and restart the host software.
+Printer is shutdown
+
+2026-03-28 05:58:36,948 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.gcode.script, Code: 400, Message: Shutdown due to webhooks request
+Once the underlying issue is corrected, use the
+"FIRMWARE_RESTART" command to reset the firmware, reload the
+config, and restart the host software.
+Printer is shutdown
+
+2026-03-28 05:58:39,933 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2026-03-28 05:58:40,018 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2026-03-28 05:58:41,195 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2026-03-28 05:58:47,921 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2026-03-28 05:58:47,935 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2026-03-28 05:58:48,186 [job_state.py:_handle_started()] - Job state initialized: standby
+2026-03-28 05:58:48,439 [klippy_connection.py:_check_ready()] - Klippy ready
+2026-03-28 05:58:48,937 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor beacon_coil', 'temperature_sensor mainboard_mcu', 'temperature_sensor toolhead_mcu', 'temperature_sensor Mainboard_RK3328', 'heater_bed', 'heater_generic chamber', 'temperature_sensor chamber_probe', 'temperature_sensor chamber_thermal_protection_sensor', 'extruder', 'tmc2240 stepper_x', 'tmc2240 stepper_y']
+2026-03-28 05:58:49,662 [websockets.py:on_close()] - Websocket Closed: ID: 281473033839568 Close Code: 1000, Close Reason: None, Pong Time Elapsed: 3.94
+2026-03-28 05:58:51,669 [application.py:log_request()] - 101 GET /websocket (127.0.0.1) [_TRUSTED_USER_] 2.56ms
+2026-03-28 05:58:51,670 [websockets.py:open()] - Websocket Opened: ID: 281473034836112, Proxied: False, User Agent: , Host Name: 127.0.0.1
+2026-03-28 05:58:51,675 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 05:59:37,293 [application.py:log_request()] - 101 GET /websocket (192.168.1.10) [_API_KEY_USER_] 2.87ms
+2026-03-28 05:59:37,294 [websockets.py:open()] - Websocket Opened: ID: 281473035225360, Proxied: False, User Agent: Dart/3.11 (dart:io), Host Name: qdp4.cduckett.net
+2026-03-28 05:59:37,308 [websockets.py:_handle_identify()] - Websocket 281473035225360 Client Identified - Name: Mobileraker-ios, Version: 2.9.7-702, Type: mobile
+2026-03-28 06:00:07,408 [websockets.py:write_to_socket()] - Websocket closed while writing: 281473035225360
+2026-03-28 06:00:12,299 [websockets.py:on_close()] - Websocket Closed: ID: 281473035225360 Close Code: None, Close Reason: None, Pong Time Elapsed: 24.99
+2026-03-28 06:04:33,930 [application.py:prepare()] - Upload Request Received from 192.168.1.10
+Content-Type: multipart/form-data; boundary=------------------------1e3b2aa6d2ac22b1
+2026-03-28 06:04:33,967 [application.py:post()] - Processing Uploaded File: FirstLayerCalibration-FirstLayer_ASA_2m22s.gcode
+2026-03-28 06:04:34,556 [shell_command.py:pipe_data_received()] - INFO:metadata:File 'FirstLayerCalibration-FirstLayer_ASA_2m22s.gcode' currently supports cancellation, processing aborted
+
+2026-03-28 06:04:34,775 [shell_command.py:_check_proc_success()] - Command (/home/mks/moonraker-env/bin/python /home/mks/moonraker/moonraker/components/file_manager/metadata.py -c /tmp/metacfg-cym2ut3v.json) successfully finished
+2026-03-28 06:04:34,783 [application.py:log_request()] - 201 POST /api/files/local (192.168.1.10) [_TRUSTED_USER_] 856.17ms
+2026-03-28 06:04:37,288 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 06:04:37,865 [application.py:log_request()] - 101 GET /websocket?token=YAWVFSZZ5WNAN6DCOSVZWGKDFBAPS2HY (192.168.1.10) [_TRUSTED_USER_] 2.77ms
+2026-03-28 06:04:37,865 [websockets.py:open()] - Websocket Opened: ID: 281473035133840, Proxied: False, User Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) BBL-Slicer/v01.10.01.50 (dark) BBL-Language/en, Host Name: 192.168.1.33
+2026-03-28 06:04:37,876 [websockets.py:_handle_identify()] - Websocket 281473035133840 Client Identified - Name: fluidd, Version: 1.36.2-248f8a2, Type: web
+2026-03-28 06:04:37,877 [file_manager.py:get_file_list()] - Updating File List <config>...
+2026-03-28 06:04:38,398 [websockets.py:on_close()] - Websocket Closed: ID: 281473035133840 Close Code: None, Close Reason: None, Pong Time Elapsed: 0.54
+2026-03-28 06:06:30,437 [application.py:prepare()] - Upload Request Received from 192.168.1.10
+Content-Type: multipart/form-data; boundary=------------------------927f5b60df961701
+2026-03-28 06:06:30,465 [application.py:post()] - Processing Uploaded File: FirstLayerCalibration-FirstLayer_ASA_2m22s.gcode
+2026-03-28 06:06:31,019 [shell_command.py:pipe_data_received()] - INFO:metadata:File 'FirstLayerCalibration-FirstLayer_ASA_2m22s.gcode' currently supports cancellation, processing aborted
+
+2026-03-28 06:06:31,241 [shell_command.py:_check_proc_success()] - Command (/home/mks/moonraker-env/bin/python /home/mks/moonraker/moonraker/components/file_manager/metadata.py -c /tmp/metacfg-84excoa4.json) successfully finished
+2026-03-28 06:06:31,249 [application.py:log_request()] - 201 POST /api/files/local (192.168.1.10) [_TRUSTED_USER_] 814.83ms
+2026-03-28 06:06:33,754 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 06:06:52,821 [application.py:prepare()] - Upload Request Received from 192.168.1.10
+Content-Type: multipart/form-data; boundary=------------------------5544ab3011b73440
+2026-03-28 06:06:52,862 [application.py:post()] - Processing Uploaded File: FirstLayerCalibration-FirstLayer_ASA_2m22s.gcode
+2026-03-28 06:06:53,481 [shell_command.py:pipe_data_received()] - INFO:metadata:File 'FirstLayerCalibration-FirstLayer_ASA_2m22s.gcode' currently supports cancellation, processing aborted
+
+2026-03-28 06:06:53,708 [shell_command.py:_check_proc_success()] - Command (/home/mks/moonraker-env/bin/python /home/mks/moonraker/moonraker/components/file_manager/metadata.py -c /tmp/metacfg-10x1b0z5.json) successfully finished
+2026-03-28 06:06:53,711 [klippy_apis.py:start_print()] - Requesting Job Start, filename = FirstLayerCalibration-FirstLayer_ASA_2m22s.gcode
+2026-03-28 06:06:53,712 [file_manager.py:_check_action()] - 
+Inotify action mismatch:
+Expected action: create_file, Inotify action: modify_file
+Requested path: /home/mks/printer_data/gcodes/FirstLayerCalibration-FirstLayer_ASA_2m22s.gcode
+Inotify path: /home/mks/printer_data/gcodes/FirstLayerCalibration-FirstLayer_ASA_2m22s.gcode
+Is move/copy: False
+2026-03-28 06:06:53,749 [application.py:log_request()] - 201 POST /api/files/local (192.168.1.10) [_TRUSTED_USER_] 930.61ms
+2026-03-28 06:06:53,865 [job_state.py:_send_job_event()] - Job Started: FirstLayerCalibration-FirstLayer_ASA_2m22s.gcode
+2026-03-28 06:06:56,252 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 06:27:12,476 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 06:27:46,070 [application.py:prepare()] - Upload Request Received from 192.168.1.10
+Content-Type: multipart/form-data; boundary=------------------------0be4e58f78e8cd18
+2026-03-28 06:27:46,099 [application.py:post()] - Processing Uploaded File: FirstLayerCalibration-FirstLayer_ASA_2m22s.gcode
+2026-03-28 06:27:46,680 [shell_command.py:pipe_data_received()] - INFO:metadata:File 'FirstLayerCalibration-FirstLayer_ASA_2m22s.gcode' currently supports cancellation, processing aborted
+
+2026-03-28 06:27:46,900 [shell_command.py:_check_proc_success()] - Command (/home/mks/moonraker-env/bin/python /home/mks/moonraker/moonraker/components/file_manager/metadata.py -c /tmp/metacfg-t69ju47f.json) successfully finished
+2026-03-28 06:27:46,903 [klippy_apis.py:start_print()] - Requesting Job Start, filename = FirstLayerCalibration-FirstLayer_ASA_2m22s.gcode
+2026-03-28 06:27:46,904 [file_manager.py:_check_action()] - 
+Inotify action mismatch:
+Expected action: create_file, Inotify action: modify_file
+Requested path: /home/mks/printer_data/gcodes/FirstLayerCalibration-FirstLayer_ASA_2m22s.gcode
+Inotify path: /home/mks/printer_data/gcodes/FirstLayerCalibration-FirstLayer_ASA_2m22s.gcode
+Is move/copy: False
+2026-03-28 06:27:46,942 [application.py:log_request()] - 201 POST /api/files/local (192.168.1.10) [_TRUSTED_USER_] 873.88ms
+2026-03-28 06:27:46,985 [job_state.py:_send_job_event()] - Job Started: FirstLayerCalibration-FirstLayer_ASA_2m22s.gcode
+2026-03-28 06:27:49,450 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 06:27:56,859 [application.py:log_request()] - 101 GET /websocket (192.168.1.10) [_API_KEY_USER_] 3.02ms
+2026-03-28 06:27:56,860 [websockets.py:open()] - Websocket Opened: ID: 281473035001168, Proxied: False, User Agent: Dart/3.11 (dart:io), Host Name: qdp4.cduckett.net
+2026-03-28 06:27:56,866 [websockets.py:_handle_identify()] - Websocket 281473035001168 Client Identified - Name: Mobileraker-ios, Version: 2.9.7-702, Type: mobile
+2026-03-28 06:28:36,927 [websockets.py:write_to_socket()] - Websocket closed while writing: 281473035001168
+2026-03-28 06:28:41,866 [websockets.py:on_close()] - Websocket Closed: ID: 281473035001168 Close Code: None, Close Reason: None, Pong Time Elapsed: 25.00
+2026-03-28 06:30:39,232 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 06:30:52,997 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2026-03-28 06:30:53,039 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2026-03-28 06:30:53,296 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2026-03-28 06:30:54,261 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2026-03-28 06:31:00,422 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2026-03-28 06:31:00,425 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2026-03-28 06:31:00,671 [job_state.py:_handle_started()] - Job state initialized: standby
+2026-03-28 06:31:00,925 [klippy_connection.py:_check_ready()] - Klippy ready
+2026-03-28 06:31:01,421 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor beacon_coil', 'temperature_sensor mainboard_mcu', 'temperature_sensor toolhead_mcu', 'temperature_sensor Mainboard_RK3328', 'heater_bed', 'heater_generic chamber', 'temperature_sensor chamber_probe', 'temperature_sensor chamber_thermal_protection_sensor', 'extruder', 'tmc2240 stepper_x', 'tmc2240 stepper_y']
+2026-03-28 06:31:01,824 [websockets.py:on_close()] - Websocket Closed: ID: 281473034836112 Close Code: 1000, Close Reason: None, Pong Time Elapsed: 9.92
+2026-03-28 06:31:03,836 [application.py:log_request()] - 101 GET /websocket (127.0.0.1) [_TRUSTED_USER_] 5.27ms
+2026-03-28 06:31:03,836 [websockets.py:open()] - Websocket Opened: ID: 281473035316368, Proxied: False, User Agent: , Host Name: 127.0.0.1
+2026-03-28 06:31:03,844 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 06:31:19,161 [spoolman.py:set_active_spool()] - Spool ID already set to: 14
+2026-03-28 06:31:19,176 [klippy_apis.py:start_print()] - Requesting Job Start, filename = FirstLayerCalibration-FirstLayer_ASA_2m22s.gcode
+2026-03-28 06:31:19,246 [job_state.py:_send_job_event()] - Job Started: FirstLayerCalibration-FirstLayer_ASA_2m22s.gcode
+2026-03-28 06:35:26,398 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 06:36:03,170 [application.py:log_request()] - 101 GET /websocket (192.168.1.10) [_API_KEY_USER_] 2.74ms
+2026-03-28 06:36:03,170 [websockets.py:open()] - Websocket Opened: ID: 281473031926480, Proxied: False, User Agent: Dart/3.11 (dart:io), Host Name: qdp4.cduckett.net
+2026-03-28 06:36:03,179 [websockets.py:_handle_identify()] - Websocket 281473031926480 Client Identified - Name: Mobileraker-ios, Version: 2.9.7-702, Type: mobile
+2026-03-28 06:39:32,398 [klippy_apis.py:cancel_print()] - Requesting job cancel...
+2026-03-28 06:39:59,384 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: server.database.delete_item, Code: -32601, Message: Key 'fcm.92e07d36-b96a-4b49-9fcd-43757e7c8599.apns' in namespace 'mobileraker' not found
+2026-03-28 06:40:33,217 [websockets.py:write_to_socket()] - Websocket closed while writing: 281473031926480
+2026-03-28 06:40:38,204 [websockets.py:on_close()] - Websocket Closed: ID: 281473031926480 Close Code: None, Close Reason: None, Pong Time Elapsed: 25.00
+2026-03-28 06:42:44,251 [application.py:log_request()] - 101 GET /websocket (192.168.1.10) [_API_KEY_USER_] 4.70ms
+2026-03-28 06:42:44,252 [websockets.py:open()] - Websocket Opened: ID: 281473034044432, Proxied: False, User Agent: Dart/3.11 (dart:io), Host Name: qdp4.cduckett.net
+2026-03-28 06:42:44,265 [websockets.py:_handle_identify()] - Websocket 281473034044432 Client Identified - Name: Mobileraker-ios, Version: 2.9.7-702, Type: mobile
+2026-03-28 06:43:24,465 [websockets.py:write_to_socket()] - Websocket closed while writing: 281473034044432
+2026-03-28 06:43:29,258 [websockets.py:on_close()] - Websocket Closed: ID: 281473034044432 Close Code: None, Close Reason: None, Pong Time Elapsed: 24.99
+2026-03-28 06:44:28,677 [application.py:log_request()] - 101 GET /websocket (192.168.1.10) [_API_KEY_USER_] 3.17ms
+2026-03-28 06:44:28,677 [websockets.py:open()] - Websocket Opened: ID: 281473033969680, Proxied: False, User Agent: Dart/3.11 (dart:io), Host Name: qdp4.cduckett.net
+2026-03-28 06:44:28,687 [websockets.py:_handle_identify()] - Websocket 281473033969680 Client Identified - Name: Mobileraker-ios, Version: 2.9.7-702, Type: mobile
+2026-03-28 06:45:48,894 [websockets.py:write_to_socket()] - Websocket closed while writing: 281473033969680
+2026-03-28 06:45:53,689 [websockets.py:on_close()] - Websocket Closed: ID: 281473033969680 Close Code: None, Close Reason: None, Pong Time Elapsed: 24.99
+2026-03-28 06:46:11,451 [application.py:log_request()] - 101 GET /websocket (192.168.1.10) [_API_KEY_USER_] 5.30ms
+2026-03-28 06:46:11,452 [websockets.py:open()] - Websocket Opened: ID: 281473033915664, Proxied: False, User Agent: Dart/3.11 (dart:io), Host Name: qdp4.cduckett.net
+2026-03-28 06:46:11,465 [websockets.py:_handle_identify()] - Websocket 281473033915664 Client Identified - Name: Mobileraker-ios, Version: 2.9.7-702, Type: mobile
+2026-03-28 06:47:01,605 [websockets.py:write_to_socket()] - Websocket closed while writing: 281473033915664
+2026-03-28 06:47:06,459 [websockets.py:on_close()] - Websocket Closed: ID: 281473033915664 Close Code: None, Close Reason: None, Pong Time Elapsed: 25.00
+2026-03-28 07:30:03,977 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 192.168.1.116
+2026-03-28 07:35:03,977 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 192.168.1.10
+2026-03-28 07:40:03,978 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 127.0.0.1
+2026-03-28 14:59:40,025 [websockets.py:on_close()] - Websocket Closed: ID: 281473034962192 Close Code: 1001, Close Reason: None, Pong Time Elapsed: 4.37
+2026-03-28 15:26:57,241 [authorization.py:_check_trusted_connection()] - Trusted Connection Detected, IP: 127.0.0.1
+2026-03-28 15:26:58,709 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 15:27:19,852 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 15:33:34,042 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2026-03-28 15:33:34,231 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2026-03-28 15:33:34,552 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 15:33:35,301 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2026-03-28 15:33:42,408 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2026-03-28 15:33:42,412 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2026-03-28 15:33:42,659 [job_state.py:_handle_started()] - Job state initialized: standby
+2026-03-28 15:33:42,922 [klippy_connection.py:_check_ready()] - Klippy ready
+2026-03-28 15:33:43,410 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor beacon_coil', 'temperature_sensor mainboard_mcu', 'temperature_sensor toolhead_mcu', 'temperature_sensor Mainboard_RK3328', 'heater_bed', 'heater_generic chamber', 'temperature_sensor chamber_probe', 'temperature_sensor chamber_thermal_protection_sensor', 'extruder', 'tmc2240 stepper_x', 'tmc2240 stepper_y']
+2026-03-28 15:33:44,797 [websockets.py:on_close()] - Websocket Closed: ID: 281473035316368 Close Code: 1000, Close Reason: None, Pong Time Elapsed: 7.98
+2026-03-28 15:33:46,817 [application.py:log_request()] - 101 GET /websocket (127.0.0.1) [_TRUSTED_USER_] 6.87ms
+2026-03-28 15:33:46,818 [websockets.py:open()] - Websocket Opened: ID: 281473036252432, Proxied: False, User Agent: , Host Name: 127.0.0.1
+2026-03-28 15:33:46,826 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 15:33:50,262 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2026-03-28 15:33:50,312 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2026-03-28 15:33:51,785 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2026-03-28 15:34:01,793 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2026-03-28 15:34:01,798 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2026-03-28 15:34:02,040 [job_state.py:_handle_started()] - Job state initialized: standby
+2026-03-28 15:34:02,295 [klippy_connection.py:_check_ready()] - Klippy ready
+2026-03-28 15:34:02,801 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor beacon_coil', 'temperature_sensor mainboard_mcu', 'temperature_sensor toolhead_mcu', 'temperature_sensor Mainboard_RK3328', 'heater_bed', 'heater_generic chamber', 'temperature_sensor chamber_probe', 'temperature_sensor chamber_thermal_protection_sensor', 'extruder', 'tmc2240 stepper_x', 'tmc2240 stepper_y']
+2026-03-28 15:34:02,808 [websockets.py:on_close()] - Websocket Closed: ID: 281473036252432 Close Code: 1000, Close Reason: None, Pong Time Elapsed: 5.98
+2026-03-28 15:34:14,822 [application.py:log_request()] - 101 GET /websocket (127.0.0.1) [_TRUSTED_USER_] 3.87ms
+2026-03-28 15:34:14,823 [websockets.py:open()] - Websocket Opened: ID: 281473031882448, Proxied: False, User Agent: , Host Name: 127.0.0.1
+2026-03-28 15:34:14,829 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 16:05:57,334 [authorization.py:_check_trusted_connection()] - Trusted Connection Detected, IP: 192.168.1.10
+2026-03-28 16:15:17,815 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 60.00 seconds
+2026-03-28 16:15:22,074 [application.py:log_request()] - 101 GET /websocket (192.168.1.10) [_API_KEY_USER_] 5.06ms
+2026-03-28 16:15:22,075 [websockets.py:open()] - Websocket Opened: ID: 281473034060304, Proxied: False, User Agent: Dart/3.11 (dart:io), Host Name: qdp4.cduckett.net
+2026-03-28 16:15:22,108 [websockets.py:_handle_identify()] - Websocket 281473034060304 Client Identified - Name: Mobileraker-ios, Version: 2.9.7-702, Type: mobile
+2026-03-28 16:16:17,817 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 120.00 seconds
+2026-03-28 16:17:17,817 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 180.00 seconds
+2026-03-28 16:18:17,819 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 240.00 seconds
+2026-03-28 16:18:25,330 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2026-03-28 16:18:25,476 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2026-03-28 16:18:25,855 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 16:18:26,593 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2026-03-28 16:18:33,470 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2026-03-28 16:18:33,474 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2026-03-28 16:18:33,719 [job_state.py:_handle_started()] - Job state initialized: standby
+2026-03-28 16:18:33,996 [klippy_connection.py:_check_ready()] - Klippy ready
+2026-03-28 16:18:34,475 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor beacon_coil', 'temperature_sensor mainboard_mcu', 'temperature_sensor toolhead_mcu', 'temperature_sensor Mainboard_RK3328', 'heater_bed', 'heater_generic chamber', 'temperature_sensor chamber_probe', 'temperature_sensor chamber_thermal_protection_sensor', 'extruder', 'tmc2240 stepper_x', 'tmc2240 stepper_y']
+2026-03-28 16:18:35,066 [websockets.py:on_close()] - Websocket Closed: ID: 281473031882448 Close Code: 1000, Close Reason: None, Pong Time Elapsed: 9.94
+2026-03-28 16:18:37,074 [application.py:log_request()] - 101 GET /websocket (127.0.0.1) [_TRUSTED_USER_] 3.07ms
+2026-03-28 16:18:37,075 [websockets.py:open()] - Websocket Opened: ID: 281473035535824, Proxied: False, User Agent: , Host Name: 127.0.0.1
+2026-03-28 16:18:37,082 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 16:19:02,273 [websockets.py:write_to_socket()] - Websocket closed while writing: 281473034060304
+2026-03-28 16:19:07,095 [websockets.py:on_close()] - Websocket Closed: ID: 281473034060304 Close Code: None, Close Reason: None, Pong Time Elapsed: 24.99
+2026-03-28 16:34:06,364 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 16:34:37,253 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 16:39:36,796 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2026-03-28 16:39:37,069 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2026-03-28 16:39:38,065 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2026-03-28 16:39:46,673 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2026-03-28 16:39:46,680 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2026-03-28 16:39:46,685 [klippy_connection.py:_check_ready()] - 
+Can not update MCU 'mcu' config as it is shutdown
+Once the underlying issue is corrected, use the
+"FIRMWARE_RESTART" command to reset the firmware, reload the
+config, and restart the host software.
+Error configuring printer
+
+2026-03-28 16:40:44,845 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2026-03-28 16:40:44,970 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2026-03-28 16:40:46,107 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2026-03-28 16:40:52,585 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2026-03-28 16:40:52,590 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2026-03-28 16:40:52,832 [job_state.py:_handle_started()] - Job state initialized: standby
+2026-03-28 16:40:53,087 [klippy_connection.py:_check_ready()] - Klippy ready
+2026-03-28 16:40:53,183 [websockets.py:on_close()] - Websocket Closed: ID: 281473035535824 Close Code: 1000, Close Reason: None, Pong Time Elapsed: 5.95
+2026-03-28 16:40:53,584 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor beacon_coil', 'temperature_sensor mainboard_mcu', 'temperature_sensor toolhead_mcu', 'temperature_sensor Mainboard_RK3328', 'heater_bed', 'heater_generic chamber', 'temperature_sensor chamber_probe', 'temperature_sensor chamber_thermal_protection_sensor', 'extruder', 'tmc2240 stepper_x', 'tmc2240 stepper_y']
+2026-03-28 16:40:55,191 [application.py:log_request()] - 101 GET /websocket (127.0.0.1) [_TRUSTED_USER_] 2.75ms
+2026-03-28 16:40:55,192 [websockets.py:open()] - Websocket Opened: ID: 281473036341392, Proxied: False, User Agent: , Host Name: 127.0.0.1
+2026-03-28 16:40:55,197 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 16:42:05,487 [application.py:prepare()] - Upload Request Received from 192.168.1.10
+Content-Type: multipart/form-data; boundary=------------------------0ee9fc27c5a4f63e
+2026-03-28 16:42:05,517 [application.py:post()] - Processing Uploaded File: FirstLayerCalibration-FirstLayer_ASA_2m22s.gcode
+2026-03-28 16:42:06,143 [shell_command.py:pipe_data_received()] - INFO:metadata:File 'FirstLayerCalibration-FirstLayer_ASA_2m22s.gcode' currently supports cancellation, processing aborted
+
+2026-03-28 16:42:06,372 [shell_command.py:_check_proc_success()] - Command (/home/mks/moonraker-env/bin/python /home/mks/moonraker/moonraker/components/file_manager/metadata.py -c /tmp/metacfg-bojp4p2d.json) successfully finished
+2026-03-28 16:42:06,374 [klippy_apis.py:start_print()] - Requesting Job Start, filename = FirstLayerCalibration-FirstLayer_ASA_2m22s.gcode
+2026-03-28 16:42:06,375 [file_manager.py:_check_action()] - 
+Inotify action mismatch:
+Expected action: create_file, Inotify action: modify_file
+Requested path: /home/mks/printer_data/gcodes/FirstLayerCalibration-FirstLayer_ASA_2m22s.gcode
+Inotify path: /home/mks/printer_data/gcodes/FirstLayerCalibration-FirstLayer_ASA_2m22s.gcode
+Is move/copy: False
+2026-03-28 16:42:06,414 [application.py:log_request()] - 201 POST /api/files/local (192.168.1.10) [_TRUSTED_USER_] 929.33ms
+2026-03-28 16:42:06,542 [job_state.py:_send_job_event()] - Job Started: FirstLayerCalibration-FirstLayer_ASA_2m22s.gcode
+2026-03-28 16:42:08,918 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 16:42:44,830 [application.py:log_request()] - 101 GET /websocket (192.168.1.10) [_API_KEY_USER_] 5.25ms
+2026-03-28 16:42:44,831 [websockets.py:open()] - Websocket Opened: ID: 281473031771856, Proxied: False, User Agent: Dart/3.11 (dart:io), Host Name: qdp4.cduckett.net
+2026-03-28 16:42:44,838 [websockets.py:_handle_identify()] - Websocket 281473031771856 Client Identified - Name: Mobileraker-ios, Version: 2.9.7-702, Type: mobile
+2026-03-28 16:45:54,933 [websockets.py:write_to_socket()] - Websocket closed while writing: 281473031771856
+2026-03-28 16:45:59,849 [websockets.py:on_close()] - Websocket Closed: ID: 281473031771856 Close Code: None, Close Reason: None, Pong Time Elapsed: 25.00
+2026-03-28 16:46:02,862 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 16:46:21,192 [application.py:log_request()] - 101 GET /websocket (192.168.1.10) [_API_KEY_USER_] 2.74ms
+2026-03-28 16:46:21,193 [websockets.py:open()] - Websocket Opened: ID: 281473033842448, Proxied: False, User Agent: Dart/3.11 (dart:io), Host Name: qdp4.cduckett.net
+2026-03-28 16:46:21,199 [websockets.py:_handle_identify()] - Websocket 281473033842448 Client Identified - Name: Mobileraker-ios, Version: 2.9.7-702, Type: mobile
+2026-03-28 16:50:22,353 [klippy_apis.py:cancel_print()] - Requesting job cancel...
+2026-03-28 16:50:49,291 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: server.database.delete_item, Code: -32601, Message: Key 'fcm.92e07d36-b96a-4b49-9fcd-43757e7c8599.apns' in namespace 'mobileraker' not found
+2026-03-28 16:52:20,915 [websockets.py:on_close()] - Websocket Closed: ID: 281473033842448 Close Code: None, Close Reason: None, Pong Time Elapsed: 9.66
+2026-03-28 17:08:50,227 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 17:28:43,180 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 17:28:49,376 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2026-03-28 17:28:49,528 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2026-03-28 17:28:50,888 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2026-03-28 17:29:00,592 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2026-03-28 17:29:00,595 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2026-03-28 17:29:00,830 [job_state.py:_handle_started()] - Job state initialized: standby
+2026-03-28 17:29:01,082 [klippy_connection.py:_check_ready()] - Klippy ready
+2026-03-28 17:29:01,465 [websockets.py:on_close()] - Websocket Closed: ID: 281473036341392 Close Code: 1000, Close Reason: None, Pong Time Elapsed: 5.94
+2026-03-28 17:29:01,579 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor beacon_coil', 'temperature_sensor mainboard_mcu', 'temperature_sensor toolhead_mcu', 'temperature_sensor Mainboard_RK3328', 'heater_bed', 'heater_generic chamber', 'temperature_sensor chamber_probe', 'temperature_sensor chamber_thermal_protection_sensor', 'extruder', 'tmc2240 stepper_x', 'tmc2240 stepper_y']
+2026-03-28 17:29:03,473 [application.py:log_request()] - 101 GET /websocket (127.0.0.1) [_TRUSTED_USER_] 3.21ms
+2026-03-28 17:29:03,474 [websockets.py:open()] - Websocket Opened: ID: 281473034109456, Proxied: False, User Agent: , Host Name: 127.0.0.1
+2026-03-28 17:29:03,478 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 17:32:26,004 [application.py:log_request()] - 101 GET /websocket (192.168.1.10) [_API_KEY_USER_] 4.52ms
+2026-03-28 17:32:26,005 [websockets.py:open()] - Websocket Opened: ID: 281473031730320, Proxied: False, User Agent: Dart/3.11 (dart:io), Host Name: qdp4.cduckett.net
+2026-03-28 17:32:26,012 [websockets.py:_handle_identify()] - Websocket 281473031730320 Client Identified - Name: Mobileraker-ios, Version: 2.9.7-702, Type: mobile
+2026-03-28 17:33:42,788 [websockets.py:on_close()] - Websocket Closed: ID: 281473031730320 Close Code: None, Close Reason: None, Pong Time Elapsed: 6.76
+2026-03-28 17:37:48,818 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 17:39:45,522 [application.py:log_request()] - 101 GET /websocket (192.168.1.10) [_API_KEY_USER_] 6.45ms
+2026-03-28 17:39:45,524 [websockets.py:open()] - Websocket Opened: ID: 281473036180944, Proxied: False, User Agent: Dart/3.11 (dart:io), Host Name: qdp4.cduckett.net
+2026-03-28 17:39:45,533 [websockets.py:_handle_identify()] - Websocket 281473036180944 Client Identified - Name: Mobileraker-ios, Version: 2.9.7-702, Type: mobile
+2026-03-28 17:40:15,572 [websockets.py:write_to_socket()] - Websocket closed while writing: 281473036180944
+2026-03-28 17:40:20,530 [websockets.py:on_close()] - Websocket Closed: ID: 281473036180944 Close Code: None, Close Reason: None, Pong Time Elapsed: 25.00
+2026-03-28 17:41:09,156 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 17:41:12,044 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2026-03-28 17:41:12,323 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2026-03-28 17:41:13,565 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2026-03-28 17:41:23,568 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2026-03-28 17:41:23,574 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2026-03-28 17:41:23,816 [job_state.py:_handle_started()] - Job state initialized: standby
+2026-03-28 17:41:24,074 [klippy_connection.py:_check_ready()] - Klippy ready
+2026-03-28 17:41:24,818 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor beacon_coil', 'temperature_sensor mainboard_mcu', 'temperature_sensor toolhead_mcu', 'temperature_sensor Mainboard_RK3328', 'heater_bed', 'heater_generic chamber', 'temperature_sensor chamber_probe', 'temperature_sensor chamber_thermal_protection_sensor', 'extruder', 'tmc2240 stepper_x', 'tmc2240 stepper_y']
+2026-03-28 17:41:25,530 [websockets.py:on_close()] - Websocket Closed: ID: 281473034109456 Close Code: 1000, Close Reason: None, Pong Time Elapsed: 1.96
+2026-03-28 17:41:27,542 [application.py:log_request()] - 101 GET /websocket (127.0.0.1) [_TRUSTED_USER_] 4.56ms
+2026-03-28 17:41:27,544 [websockets.py:open()] - Websocket Opened: ID: 281473035576272, Proxied: False, User Agent: , Host Name: 127.0.0.1
+2026-03-28 17:41:27,552 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 17:45:04,048 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 192.168.1.10
+2026-03-28 18:45:04,053 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 127.0.0.1
+2026-03-28 20:14:31,847 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 60.00 seconds
+2026-03-28 20:15:31,850 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 120.00 seconds
+2026-03-28 20:16:31,852 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 180.01 seconds
+2026-03-28 20:20:43,692 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.gcode.script, Code: 400, Message: No trigger on probe after full movement
+2026-03-28 20:38:10,635 [application.py:log_request()] - 101 GET /websocket (192.168.1.10) [_API_KEY_USER_] 3.10ms
+2026-03-28 20:38:10,635 [websockets.py:open()] - Websocket Opened: ID: 281473034070224, Proxied: False, User Agent: Dart/3.11 (dart:io), Host Name: qdp4.cduckett.net
+2026-03-28 20:38:10,641 [websockets.py:_handle_identify()] - Websocket 281473034070224 Client Identified - Name: Mobileraker-ios, Version: 2.9.7-702, Type: mobile
+2026-03-28 20:38:11,169 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 60.00 seconds
+2026-03-28 20:38:27,419 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.gcode.script, Code: 400, Message: Attempted to probe with Beacon below calibrated model range
+2026-03-28 20:38:42,083 [authorization.py:_check_trusted_connection()] - Trusted Connection Detected, IP: 127.0.0.1
+2026-03-28 20:39:30,742 [websockets.py:write_to_socket()] - Websocket closed while writing: 281473034070224
+2026-03-28 20:39:35,643 [websockets.py:on_close()] - Websocket Closed: ID: 281473034070224 Close Code: None, Close Reason: None, Pong Time Elapsed: 24.99
+2026-03-28 20:53:22,583 [application.py:log_request()] - 101 GET /websocket (192.168.1.10) [_API_KEY_USER_] 3.16ms
+2026-03-28 20:53:22,584 [websockets.py:open()] - Websocket Opened: ID: 281473034820112, Proxied: False, User Agent: Dart/3.11 (dart:io), Host Name: qdp4.cduckett.net
+2026-03-28 20:53:22,596 [websockets.py:_handle_identify()] - Websocket 281473034820112 Client Identified - Name: Mobileraker-ios, Version: 2.9.7-702, Type: mobile
+2026-03-28 20:56:01,495 [websockets.py:on_close()] - Websocket Closed: ID: 281473034820112 Close Code: None, Close Reason: None, Pong Time Elapsed: 8.89
+2026-03-28 21:13:29,751 [authorization.py:_check_trusted_connection()] - Trusted Connection Detected, IP: 192.168.1.10
+2026-03-28 21:13:29,758 [application.py:prepare()] - Upload Request Received from 192.168.1.10
+Content-Type: multipart/form-data; boundary=------------------------9337d4346405f3ed
+2026-03-28 21:13:29,776 [application.py:post()] - Processing Uploaded File: FirstLayerCalibration-FirstLayer_ASA_2m22s.gcode
+2026-03-28 21:13:30,324 [shell_command.py:pipe_data_received()] - INFO:metadata:File 'FirstLayerCalibration-FirstLayer_ASA_2m22s.gcode' currently supports cancellation, processing aborted
+
+2026-03-28 21:13:30,553 [shell_command.py:_check_proc_success()] - Command (/home/mks/moonraker-env/bin/python /home/mks/moonraker/moonraker/components/file_manager/metadata.py -c /tmp/metacfg-51m53y9m.json) successfully finished
+2026-03-28 21:13:30,557 [klippy_apis.py:start_print()] - Requesting Job Start, filename = FirstLayerCalibration-FirstLayer_ASA_2m22s.gcode
+2026-03-28 21:13:30,558 [file_manager.py:_check_action()] - 
+Inotify action mismatch:
+Expected action: create_file, Inotify action: modify_file
+Requested path: /home/mks/printer_data/gcodes/FirstLayerCalibration-FirstLayer_ASA_2m22s.gcode
+Inotify path: /home/mks/printer_data/gcodes/FirstLayerCalibration-FirstLayer_ASA_2m22s.gcode
+Is move/copy: False
+2026-03-28 21:13:30,618 [application.py:log_request()] - 201 POST /api/files/local (192.168.1.10) [_TRUSTED_USER_] 860.98ms
+2026-03-28 21:13:30,732 [job_state.py:_send_job_event()] - Job Started: FirstLayerCalibration-FirstLayer_ASA_2m22s.gcode
+2026-03-28 21:13:33,124 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 21:16:29,158 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 21:16:51,344 [application.py:log_request()] - 101 GET /websocket (192.168.1.10) [_API_KEY_USER_] 2.74ms
+2026-03-28 21:16:51,345 [websockets.py:open()] - Websocket Opened: ID: 281473035317776, Proxied: False, User Agent: Dart/3.11 (dart:io), Host Name: qdp4.cduckett.net
+2026-03-28 21:16:51,353 [websockets.py:_handle_identify()] - Websocket 281473035317776 Client Identified - Name: Mobileraker-ios, Version: 2.9.7-702, Type: mobile
+2026-03-28 21:28:06,541 [websockets.py:on_close()] - Websocket Closed: ID: 281473035317776 Close Code: None, Close Reason: None, Pong Time Elapsed: 5.14
+2026-03-28 21:54:20,239 [application.py:log_request()] - 101 GET /websocket (192.168.1.10) [_API_KEY_USER_] 3.08ms
+2026-03-28 21:54:20,240 [websockets.py:open()] - Websocket Opened: ID: 281473034070864, Proxied: False, User Agent: Dart/3.11 (dart:io), Host Name: qdp4.cduckett.net
+2026-03-28 21:54:20,247 [websockets.py:_handle_identify()] - Websocket 281473034070864 Client Identified - Name: Mobileraker-ios, Version: 2.9.7-702, Type: mobile
+2026-03-28 21:54:50,255 [websockets.py:write_to_socket()] - Websocket closed while writing: 281473034070864
+2026-03-28 21:54:55,245 [websockets.py:on_close()] - Websocket Closed: ID: 281473034070864 Close Code: None, Close Reason: None, Pong Time Elapsed: 25.00
+2026-03-28 21:58:51,591 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 22:15:04,067 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 192.168.1.10
+2026-03-28 22:21:44,113 [klippy_connection.py:_process_status_update()] - Klippy has shutdown
+2026-03-28 22:21:44,124 [proc_stats.py:_handle_shutdown()] - 
+Moonraker System Usage Statistics:
+System Time: 1774736474.628222, Usage: 2.34%, Memory: 50672 kB
+System Time: 1774736475.628363, Usage: 2.1%, Memory: 50672 kB
+System Time: 1774736476.627936, Usage: 3.29%, Memory: 50672 kB
+System Time: 1774736477.628902, Usage: 2.22%, Memory: 50672 kB
+System Time: 1774736478.630908, Usage: 2.32%, Memory: 50672 kB
+System Time: 1774736479.629340, Usage: 2.17%, Memory: 50672 kB
+System Time: 1774736480.630035, Usage: 4.29%, Memory: 50672 kB
+System Time: 1774736481.628923, Usage: 2.68%, Memory: 50672 kB
+System Time: 1774736482.633579, Usage: 2.48%, Memory: 50672 kB
+System Time: 1774736483.629883, Usage: 2.79%, Memory: 50672 kB
+System Time: 1774736484.629916, Usage: 2.15%, Memory: 50672 kB
+System Time: 1774736485.631218, Usage: 2.12%, Memory: 50672 kB
+System Time: 1774736486.630428, Usage: 2.17%, Memory: 50672 kB
+System Time: 1774736487.632084, Usage: 2.58%, Memory: 50672 kB
+System Time: 1774736488.632642, Usage: 2.21%, Memory: 50672 kB
+System Time: 1774736489.633759, Usage: 2.15%, Memory: 50672 kB
+System Time: 1774736490.634212, Usage: 4.61%, Memory: 50672 kB
+System Time: 1774736491.633814, Usage: 2.34%, Memory: 50672 kB
+System Time: 1774736492.634179, Usage: 2.24%, Memory: 50672 kB
+System Time: 1774736493.634410, Usage: 2.41%, Memory: 50672 kB
+System Time: 1774736494.633847, Usage: 2.19%, Memory: 50672 kB
+System Time: 1774736495.639228, Usage: 2.2%, Memory: 50672 kB
+System Time: 1774736496.635393, Usage: 2.91%, Memory: 50672 kB
+System Time: 1774736497.636573, Usage: 2.17%, Memory: 50672 kB
+System Time: 1774736498.636657, Usage: 2.26%, Memory: 50672 kB
+System Time: 1774736499.636995, Usage: 2.1%, Memory: 50672 kB
+System Time: 1774736500.637995, Usage: 3.98%, Memory: 50672 kB
+System Time: 1774736501.637592, Usage: 2.22%, Memory: 50672 kB
+System Time: 1774736502.638430, Usage: 2.38%, Memory: 50672 kB
+System Time: 1774736503.637638, Usage: 2.18%, Memory: 50672 kB
+CPU Temperature: 58.181
+2026-03-28 22:21:44,499 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.gcode.script, Code: 400, Message: Shutdown due to webhooks request
+Once the underlying issue is corrected, use the
+"FIRMWARE_RESTART" command to reset the firmware, reload the
+config, and restart the host software.
+Printer is shutdown
+
+2026-03-28 22:21:50,830 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2026-03-28 22:21:50,945 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2026-03-28 22:21:52,089 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2026-03-28 22:21:58,468 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2026-03-28 22:21:58,470 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2026-03-28 22:21:58,717 [job_state.py:_handle_started()] - Job state initialized: standby
+2026-03-28 22:21:58,973 [klippy_connection.py:_check_ready()] - Klippy ready
+2026-03-28 22:21:59,474 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor beacon_coil', 'temperature_sensor mainboard_mcu', 'temperature_sensor toolhead_mcu', 'temperature_sensor Mainboard_RK3328', 'heater_bed', 'heater_generic chamber', 'temperature_sensor chamber_probe', 'temperature_sensor chamber_thermal_protection_sensor', 'extruder', 'tmc2240 stepper_x', 'tmc2240 stepper_y']
+2026-03-28 22:22:00,870 [websockets.py:on_close()] - Websocket Closed: ID: 281473035576272 Close Code: 1000, Close Reason: None, Pong Time Elapsed: 1.17
+2026-03-28 22:22:02,881 [application.py:log_request()] - 101 GET /websocket (127.0.0.1) [_TRUSTED_USER_] 4.64ms
+2026-03-28 22:22:02,882 [websockets.py:open()] - Websocket Opened: ID: 281473031813328, Proxied: False, User Agent: , Host Name: 127.0.0.1
+2026-03-28 22:22:02,889 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 22:22:08,415 [application.py:log_request()] - 101 GET /websocket (192.168.1.10) [_API_KEY_USER_] 3.33ms
+2026-03-28 22:22:08,416 [websockets.py:open()] - Websocket Opened: ID: 281473035222224, Proxied: False, User Agent: Dart/3.11 (dart:io), Host Name: qdp4.cduckett.net
+2026-03-28 22:22:08,444 [websockets.py:_handle_identify()] - Websocket 281473035222224 Client Identified - Name: Mobileraker-ios, Version: 2.9.7-702, Type: mobile
+2026-03-28 22:23:19,814 [klippy_connection.py:wait()] - Request 'gcode/script' pending: 60.00 seconds
+2026-03-28 22:29:04,612 [websockets.py:on_close()] - Websocket Closed: ID: 281473035222224 Close Code: None, Close Reason: None, Pong Time Elapsed: 6.15
+2026-03-28 22:42:55,711 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 22:43:37,517 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2026-03-28 22:43:37,837 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2026-03-28 22:43:39,030 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2026-03-28 22:43:49,034 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2026-03-28 22:43:49,038 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2026-03-28 22:43:49,282 [job_state.py:_handle_started()] - Job state initialized: standby
+2026-03-28 22:43:49,535 [klippy_connection.py:_check_ready()] - Klippy ready
+2026-03-28 22:43:50,034 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor beacon_coil', 'temperature_sensor mainboard_mcu', 'temperature_sensor toolhead_mcu', 'temperature_sensor Mainboard_RK3328', 'heater_bed', 'heater_generic chamber', 'temperature_sensor chamber_probe', 'temperature_sensor chamber_thermal_protection_sensor', 'extruder', 'tmc2240 stepper_x', 'tmc2240 stepper_y']
+2026-03-28 22:43:50,979 [websockets.py:on_close()] - Websocket Closed: ID: 281473031813328 Close Code: 1000, Close Reason: None, Pong Time Elapsed: 7.94
+2026-03-28 22:43:52,988 [application.py:log_request()] - 101 GET /websocket (127.0.0.1) [_TRUSTED_USER_] 4.46ms
+2026-03-28 22:43:52,989 [websockets.py:open()] - Websocket Opened: ID: 281473031920208, Proxied: False, User Agent: , Host Name: 127.0.0.1
+2026-03-28 22:43:52,995 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 22:49:51,491 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 22:51:03,225 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 22:51:06,863 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2026-03-28 22:51:07,136 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.info, Code: 503, Message: Klippy Host not connected
+2026-03-28 22:51:08,375 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2026-03-28 22:51:18,796 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2026-03-28 22:51:18,799 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2026-03-28 22:51:19,046 [job_state.py:_handle_started()] - Job state initialized: standby
+2026-03-28 22:51:19,298 [klippy_connection.py:_check_ready()] - Klippy ready
+2026-03-28 22:51:19,922 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor beacon_coil', 'temperature_sensor mainboard_mcu', 'temperature_sensor toolhead_mcu', 'temperature_sensor Mainboard_RK3328', 'heater_bed', 'heater_generic chamber', 'temperature_sensor chamber_probe', 'temperature_sensor chamber_thermal_protection_sensor', 'extruder', 'tmc2240 stepper_x', 'tmc2240 stepper_y']
+2026-03-28 22:51:21,020 [websockets.py:on_close()] - Websocket Closed: ID: 281473031920208 Close Code: 1000, Close Reason: None, Pong Time Elapsed: 7.98
+2026-03-28 22:51:23,032 [application.py:log_request()] - 101 GET /websocket (127.0.0.1) [_TRUSTED_USER_] 4.85ms
+2026-03-28 22:51:23,033 [websockets.py:open()] - Websocket Opened: ID: 281473032381776, Proxied: False, User Agent: , Host Name: 127.0.0.1
+2026-03-28 22:51:23,041 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 22:52:05,810 [application.py:log_request()] - 101 GET /websocket (192.168.1.10) [_API_KEY_USER_] 4.56ms
+2026-03-28 22:52:05,811 [websockets.py:open()] - Websocket Opened: ID: 281473035362000, Proxied: False, User Agent: Dart/3.11 (dart:io), Host Name: qdp4.cduckett.net
+2026-03-28 22:52:05,818 [websockets.py:_handle_identify()] - Websocket 281473035362000 Client Identified - Name: Mobileraker-ios, Version: 2.9.7-702, Type: mobile
+2026-03-28 22:52:34,367 [websockets.py:on_close()] - Websocket Closed: ID: 281473035362000 Close Code: None, Close Reason: None, Pong Time Elapsed: 18.55
+2026-03-28 22:53:03,999 [application.py:log_request()] - 101 GET /websocket (192.168.1.10) [_API_KEY_USER_] 5.39ms
+2026-03-28 22:53:04,001 [websockets.py:open()] - Websocket Opened: ID: 281473034816528, Proxied: False, User Agent: Dart/3.11 (dart:io), Host Name: qdp4.cduckett.net
+2026-03-28 22:53:04,013 [websockets.py:_handle_identify()] - Websocket 281473034816528 Client Identified - Name: Mobileraker-ios, Version: 2.9.7-702, Type: mobile
+2026-03-28 22:58:12,546 [websockets.py:on_close()] - Websocket Closed: ID: 281473034816528 Close Code: None, Close Reason: None, Pong Time Elapsed: 8.51
+2026-03-28 23:04:55,146 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2026-03-28 23:27:08,596 [application.py:log_request()] - 101 GET /websocket (192.168.1.10) [_API_KEY_USER_] 4.65ms
+2026-03-28 23:27:08,597 [websockets.py:open()] - Websocket Opened: ID: 281473031768336, Proxied: False, User Agent: Dart/3.11 (dart:io), Host Name: qdp4.cduckett.net
+2026-03-28 23:27:08,606 [websockets.py:_handle_identify()] - Websocket 281473031768336 Client Identified - Name: Mobileraker-ios, Version: 2.9.7-702, Type: mobile
+2026-03-28 23:27:38,750 [websockets.py:write_to_socket()] - Websocket closed while writing: 281473031768336
+2026-03-28 23:27:43,602 [websockets.py:on_close()] - Websocket Closed: ID: 281473031768336 Close Code: None, Close Reason: None, Pong Time Elapsed: 24.99
